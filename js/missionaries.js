@@ -39,6 +39,39 @@ let currentPage = 1;
 const missionariesPerPage = 6;
 let filteredMissionaries = [];
 
+// Mapeamento de logos por agência (automático)
+const baseImages = {
+    "Igreja Batista Regular da Graça": "/img/info/logo.png",
+    "Paulo de Tarso": "/img/MBRPT.png",
+    "MAB": "/img/info/MAB.png",
+    "MBBF": "/img/info/MBBF.png",
+    "Maranata": "/img/info/maranata.png",
+    "Novas Tribos": "/img/info/NT.png",
+    "Independente": "/img/info/indi.png"
+};
+
+// Mapeamento de bandeiras por país (automático)
+const countryFlags = {
+    "Brasil": "/img/info/BR.png",
+    "Venezuela": "/img/info/VEN.png",
+    "Bolívia": "/img/info/BOL.png",
+    "Portugal": "/img/info/PT.png",
+    "EUA": "/img/info/EUA.png"
+};
+
+// Mapeamento de bandeiras por estado (automático)
+const stateFlags = {
+    "AC": "/img/info/AC.png", "AL": "/img/info/AL.png", "AP": "/img/info/AP.png",
+    "AM": "/img/info/AM.png", "BA": "/img/info/BA.png", "CE": "/img/info/CE.png",
+    "DF": "/img/info/DF.png", "ES": "/img/info/ES.png", "GO": "/img/info/GO.png",
+    "MA": "/img/info/MA.png", "MT": "/img/info/MT.png", "MS": "/img/info/MS.png",
+    "MG": "/img/info/MG.png", "PA": "/img/info/PA.png", "PB": "/img/info/PB.png",
+    "PR": "/img/info/PR.png", "PE": "/img/info/PE.png", "PI": "/img/info/PI.png",
+    "RJ": "/img/info/RJ.png", "RN": "/img/info/RN.png", "RS": "/img/info/RS.png",
+    "RO": "/img/info/RO.png", "RR": "/img/info/RR.png", "SC": "/img/info/SC.png",
+    "SP": "/img/info/SP.png", "SE": "/img/info/SE.png", "TO": "/img/info/TO.png"
+};
+
 async function loadMissionariesFromJSON() {
     try {
         const response = await fetch('/data/missionarios.json');
@@ -47,14 +80,14 @@ async function loadMissionariesFromJSON() {
         const data = await response.json();
         let missionaries = data.missionarios || [];
         
-        // ORDENA POR NOME (ORDEM ALFABÉTICA)
+        // Ordena por nome
         missionaries.sort((a, b) => {
             const nomeA = a.name || '';
             const nomeB = b.name || '';
             return nomeA.localeCompare(nomeB);
         });
         
-        // Adiciona IDs e flags para cada missionário
+        // Adiciona IDs e flags (automático)
         return missionaries.map((m, index) => ({
             id: index + 1,
             name: m.name || '',
@@ -63,11 +96,11 @@ async function loadMissionariesFromJSON() {
             location: m.location || '',
             city: m.city || '',
             state: m.state || '',
-            stateFlag: `/img/info/${m.state || 'AM'}.png`,
+            stateFlag: stateFlags[m.state] || '/img/info/AM.png',
             country: m.country || 'Brasil',
-            countryFlag: `/img/info/${m.country === 'Brasil' ? 'BR' : 'BR'}.png`,
+            countryFlag: countryFlags[m.country] || '/img/info/BR.png',
             base: m.base || 'Igreja Batista Regular da Graça',
-            baseImg: m.baseImg || '/img/info/logo.png',
+            baseImg: m.baseImg || baseImages[m.base] || '/img/info/logo.png',
             phone: m.phone || '',
             image: m.image || '/img/missionarios/default.png',
             video: m.video || '',
