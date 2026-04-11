@@ -49,12 +49,10 @@ collections:
                 widget: "select"
                 default: "Igreja Batista Regular da Graça"
                 options:
-                  - {label: "Igreja Batista Regular da Graça", value: "Igreja Batista Regular da Graça"}
+                  - {label: "Igreja Batista Regular da Graça (logo padrão)", value: "Igreja Batista Regular da Graça"}
                   - {label: "Paulo de Tarso", value: "Paulo de Tarso"}
                   - {label: "MAB", value: "MAB"}
                   - {label: "MBBF", value: "MBBF"}
                   - {label: "Maranata", value: "Maranata"}
                   - {label: "Novas Tribos", value: "Novas Tribos"}
-                  - {label: "Independente", value: "Independente"}
-              
-              - {label: "Logo da Agência", name: "baseImg", widget: "image", required: false}
+                  - {label: "Independente (sem logo)", value: "Independente"}
