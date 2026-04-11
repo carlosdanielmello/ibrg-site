@@ -56,3 +56,25 @@ collections:
                   - {label: "Maranata", value: "Maranata"}
                   - {label: "Novas Tribos", value: "Novas Tribos"}
                   - {label: "Independente (sem logo)", value: "Independente"}
+
+  - name: "programacoes"
+    label: "Programações"
+    label_singular: "Programação"
+    folder: "data"
+    create: true
+    files:
+      - name: "atividades"
+        label: "Atividades da Igreja"
+        file: "data/programacoes.json"
+        description: "Lista de programações e atividades da igreja"
+        fields:
+          - label: "Programações"
+            name: "programacoes"
+            widget: "list"
+            summary: "{{fields.titulo}} - {{fields.dia}} às {{fields.horario}}"
+            fields:
+              - {label: "Título", name: "titulo", widget: "string"}
+              - {label: "Dia da semana", name: "dia", widget: "string", hint: "Exemplo: Domingo, Segunda-feira, Quarta-feira, Sábado"}
+              - {label: "Horário", name: "horario", widget: "string", hint: "Exemplo: 8h30, 19h, 18h"}
+              - {label: "Descrição", name: "descricao", widget: "text"}
+              - {label: "Imagem ilustrativa", name: "imagem", widget: "image", required: false}
