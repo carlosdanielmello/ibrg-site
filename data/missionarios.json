@@ -38,6 +38,18 @@
       "country": "Brasil",
       "image": "/img/missionarios/3.png",
       "description": "O missionário Bento Sérgio serve ao Senhor na Congregação Batista Regular Elim, na cidade de Cascavel, no estado do Ceará."
+    },
+    {
+      "church": "Primeira igreja do biquini",
+      "city": "Fenda do Biquini",
+      "name": "Bob Esponja",
+      "phone": "232323222323",
+      "state": "AC",
+      "base": "Independente",
+      "location": "Fenda do Biquini",
+      "country": "Outro",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDh3kTcQG3Q8K4z0X1CYcb91SqKVzaXaNKsA&s",
+      "description": "Uma esponja-do-mar chamada Bob Esponja Calça Quadrada mora com seu caracol de estimação na Fenda do Biquíni, no fundo do oceano. Bob trabalha no Siri Cascudo e, nas horas vagas, vive arrumando confusões com seu melhor amigo, a estrela-do-mar Patrick."
     }
   ]
 }
