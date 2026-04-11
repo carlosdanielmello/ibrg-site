@@ -1,18 +1,6 @@
 {
   "missionarios": [
     {
-      "church": "asdasdasd",
-      "city": "asdasd",
-      "name": "Alberto Carlos",
-      "phone": "2323",
-      "state": "asdasd",
-      "base": "2342424",
-      "location": "asdas",
-      "country": "Brasil ",
-      "image": "/img/uploads/29.png",
-      "description": "asdasd"
-    },
-    {
       "church": "Congregação Batista Regular da Graça",
       "city": "Rio Preto da Eva",
       "name": "Pr. Amarildo Nunes",
