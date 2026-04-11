@@ -22,7 +22,7 @@ collections:
               - {label: "Nome", name: "name", widget: "string"}
               - {label: "Descrição", name: "description", widget: "text"}
               - {label: "Igreja", name: "church", widget: "string"}
-              - {label: "Localização (cidade)", name: "location", widget: "string"}
+              - {label: "Localização (comunidade ou cidade)", name: "location", widget: "string"}
               - {label: "Cidade", name: "city", widget: "string"}
               
               - label: "Estado (UF)"
