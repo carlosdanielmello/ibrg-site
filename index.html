@@ -1,0 +1,508 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início - IBRG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/missionaries.css">
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Navbar -->
+    <nav class="shadow-md sticky top-0 z-50 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center hover:opacity-90 transition-opacity">
+                        <img src="/img/logo.png" alt="Logo IBRG" class="h-20 mr-3">
+                        <span class="text-lg md:text-xl font-bold text-gray-800">Igreja Batista Regular da Graça</span>
+                    </a>
+                </div>
+
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a class='nav-item text-gray-700 px-3 py-2 font-medium' href='/'>Início</a>
+
+                    <div class="relative group">
+                        <button class="nav-item text-gray-700 px-3 py-2 font-medium flex items-center">
+                            Sobre Nós
+                            <i
+                                class="fas fa-chevron-down ml-2 text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div
+                            class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-1 group-hover:translate-y-0">
+                            <a href="#quem-somos"
+                                class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Quem
+                                Somos</a>
+                            <a href="pages/historia.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Nossa
+                                História</a>
+                            <a href="#pastor"
+                                class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Nosso
+                                Pastor</a>
+                            <a href="pages/nossa-fe.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Nossa
+                                Fé</a>
+                        </div>
+                    </div>
+
+                    <a href="/pages/programacoes.html"
+                        class="nav-item text-gray-700 px-3 py-2 font-medium">Programações</a>
+
+                    <div class="relative group">
+                        <button class="nav-item text-gray-700 px-3 py-2 font-medium flex items-center">
+                            Missões
+                            <i
+                                class="fas fa-chevron-down ml-2 text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div
+                            class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-1 group-hover:translate-y-0">
+                            <a class='block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6]'
+                                href='/pages/missionarios.html'>Missionários</a>
+                            <a class='block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6]'
+                                href='/pages/congregacoes.html'>Congregações</a>
+                        </div>
+                    </div>
+
+                    <a class='nav-item text-gray-700 px-3 py-2 font-medium' href='/pages/contato.html'>Contato</a>
+
+                    <a class='btn-primary px-6 py-2 rounded-md font-medium ml-2'
+                        href='/pages/contato.html#cnpj-section'>
+                        <i class="fas fa-heart mr-2"></i>Ofertar
+                    </a>
+                </div>
+
+                <!-- Botão Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button"
+                        class="text-gray-700 focus:outline-none p-2 rounded-md hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white shadow-lg">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a class='block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors'
+                    href='/'>Início</a>
+
+                <div class="relative">
+                    <button id="mobile-dropdown-button-1"
+                        class="w-full flex justify-between items-center px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">
+                        <span>Sobre Nós</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+
+                    <div id="mobile-dropdown-1" class="hidden pl-4 mt-1 space-y-1">
+                        <a href="#quem-somos"
+                            class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Quem
+                            Somos</a>
+                        <a href="pages/historia.html"
+                            class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Nossa
+                            História</a>
+                        <a href="#pastor"
+                            class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Nosso
+                            Pastor</a>
+                        <a href="pages/nossa-fe.html"
+                            class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Nossa
+                            Fé</a>
+                    </div>
+                </div>
+
+                <a href="/pages/programacoes.html"
+                    class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Programações</a>
+
+                <div class="relative">
+                    <button id="mobile-dropdown-button-2"
+                        class="w-full flex justify-between items-center px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">
+                        <span>Missões</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+
+                    <div id="mobile-dropdown-2" class="hidden pl-4 mt-1 space-y-1">
+                        <a class='block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors'
+                            href='/pages/missionarios.html'>Missionários</a>
+                        <a class='block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors'
+                            href='/pages/congregacoes.html'>Congregações</a>
+                    </div>
+                </div>
+
+                <a class='block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors'
+                    href='/pages/contato.html'>Contato</a>
+
+                <a class='block w-full text-center btn-primary px-4 py-3 rounded-md font-medium mt-2'
+                    href='/pages/contato.html#cnpj-section'>
+                    <i class="fas fa-heart mr-2"></i>Ofertar
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Showcase -->
+    <section id="showcase" class="showcase-home">
+        <div id="showcase-container" class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Igreja Batista Regular da Graça</h1>
+            <p id="verse" class="text-xl md:text-2xl lg:text-3xl">"Pela graça sois salvos, mediante a fé."</p>
+            <span id="ref" class="mt-4">Efésios 2:8</span>
+
+            <div class="mt-6">
+                <a href="#quem-somos" class="btn-primary inline-flex items-center px-8 py-3 text-lg rounded-full">
+                    Conheça nossa igreja <i class="fas fa-arrow-down ml-2 animate-bounce"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quem Somos Section -->
+    <section id="quem-somos" class="py-20 bg-white">
+        <div class="container mx-auto px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6 section-title">Quem Somos</h2>
+
+            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16 max-w-6xl mx-auto">
+                <!-- Imagem -->
+                <div class="w-full lg:w-2/5">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl transform transition duration-500 hover:scale-[1.02]">
+                        <img src="/img/quem-somos.JPEG" alt="Igreja Batista Regular da Graça"
+                            class="w-full h-auto object-cover">
+                    </div>
+                </div>
+
+                <!-- Texto -->
+                <div class="flex-1 text-gray-600 space-y-6">
+                    <p class="text-justify leading-relaxed">
+                        A Igreja Batista Regular da Graça é uma organização religiosa cristã, sem fins lucrativos, fundada em 1957.
+                    </p>
+                    <p class="text-justify leading-relaxed">
+                        Somos uma comunidade de salvos em Cristo Jesus, unidos pela fé e comunhão mútua, com o propósito de observar as ordenanças e os ensinamentos de Cristo, e a edificação dos membros da igreja.
+                    </p>
+
+                    <!-- Missão -->
+                    <div class="pt-4">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gray-800">
+                            <span class="border-b-2 border-[#C2994D] pb-1">Nossa Missão</span>
+                        </h3>
+                        <p class="text-justify leading-relaxed">
+                            A missão da IBRG é anunciar o Evangelho do Senhor Jesus Cristo aos que estão perdidos, obedecendo a ordem do Senhor em Mateus 28.19: "Portanto ide, fazei discípulos de todas as nações, batizando-os em nome do Pai, e do Filho, e do Espírito Santo"; promover a edificação dos seus membros pela Palavra de Deus, com o propósito de glorificar o nome de Deus em todos os cultos, programações e atividades.
+                        </p>
+                    </div>
+
+                    <!-- Visão -->
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4 text-gray-800">
+                            <span class="border-b-2 border-[#C2994D] pb-1">Nossa Visão</span>
+                        </h3>
+                        <p class="text-justify leading-relaxed">
+                            Promover a edificação dos seus membros pela Palavra de Deus, com o propósito de glorificar o
+                            nome de Deus em todos os cultos, programações e atividades.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Nossa História -->
+<section class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6">
+        <div class="max-w-5xl mx-auto">
+            <!-- Cabeçalho centralizado -->
+            <div class="text-center mb-10">
+                <div class="inline-block bg-[#F3E9D6] rounded-full px-6 py-2 mb-6">
+                    <span class="text-[#C2994D] font-semibold"><i class="fas fa-history mr-2"></i>Desde 1957</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Nossa História</h2>
+            </div>
+
+            <!-- Layout com imagem e texto lado a lado no desktop -->
+            <div class="flex flex-col lg:flex-row items-center gap-10">
+                <!-- Imagem - menor e mais proporcional -->
+                <div class="w-full lg:w-2/5">
+                    <div class="relative rounded-xl overflow-hidden shadow-xl">
+                        <img src="https://images.pexels.com/photos/8468465/pexels-photo-8468465.jpeg" alt="Primeira edificação da igreja" 
+                            class="w-full h-64 lg:h-72 object-cover" onerror="this.src='/img/bg.jpg'">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
+                            <p class="text-white text-xs italic">Imagem temporária</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Texto - mais equilibrado -->
+                <div class="flex-1 space-y-4">
+                    <p class="text-gray-600 text-justify leading-relaxed">
+                        Fundada em 1957 pelos missionários ingleses Richard e Virginia Wakefield, a Igreja Batista
+                        Regular da Graça tem mais de seis décadas de história no bairro de Adrianópolis, em Manaus. O
+                        trabalho começou com um ponto de pregação em uma humilde edificação de madeira e palha, que ao longo dos anos se transformou no que somos hoje.
+                    </p>
+                    <p class="text-gray-600 text-justify leading-relaxed">
+                        Sob a liderança de pastores como Marcos Trible, Jonas Xavier Pessoa (in memoriam) e atualmente
+                        o Pastor José Wellington Cartaxo, nossa igreja continua firme no propósito de pregar a Cristo
+                        e viver pela Sua graça. Conheça nossa história completa e os marcos que moldaram nossa jornada de fé.
+                    </p>
+                    
+                    <!-- Crédito discreto -->
+                    <p class="text-gray-400 text-sm text-right italic pt-2">
+                        <i class="fas fa-feather-alt mr-1"></i> Por Elide Lima
+                    </p>
+                </div>
+            </div>
+
+            <!-- Botão centralizado -->
+            <div class="text-center mt-10">
+                <a href="pages/historia.html" class="btn-primary inline-flex items-center px-8 py-3 rounded-lg font-medium">
+                    <i class="fas fa-book-open mr-2"></i>Conheça nossa história
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Pastor Section -->
+    <section id="pastor" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-6 section-title">Nosso Pastor</h2>
+
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-10 max-w-5xl mx-auto">
+                <div class="pastor-card w-full lg:w-auto">
+                    <div class="pastor-image">
+                        <img src="/img/pastor.jpg" alt="Pastor José Wellington Cartaxo" class="w-full h-auto"
+                            loading="lazy">
+                    </div>
+                </div>
+
+                <div class="flex-1">
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Pastor José Wellington Cartaxo</h3>
+                    <p class="text-lg text-[#C2994D] font-medium mb-6 text-justify">Pastor titular desde 2007, atual pastor da igreja</p>
+                    <p class="text-gray-600 mb-6 text-justify leading-relaxed">
+                        O Pastor José Wellington Cartaxo dedica sua vida ao ministério pastoral, guiando sua comunidade
+                        com sabedoria e amor. É casado com Rosa Cartaxo, com quem compartilha uma bela família. Juntos,
+                        são pais de três filhos: Natanael Cartaxo - casado com Thais Cartaxo - , Rhaniel Cartaxo e
+                        Elizabete Cartaxo. Sob sua liderança, a igreja tem crescido espiritualmente e ampliado seu
+                        alcance missionário.
+                    </p>
+                    <p class="text-gray-600 text-justify leading-relaxed">
+                        A igreja conta atualmente com seis diáconos, que juntamente com o pastor, compõem o quadro
+                        de oficiais da igreja. Homens qualificados para o serviço na igreja local e apoio aos
+                        necessitados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nossa Fé -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-12 max-w-6xl mx-auto">
+                <div class="flex-1 text-center lg:text-left">
+                    <div class="inline-block bg-[#F3E9D6] rounded-full px-6 py-2 mb-6">
+                        <span class="text-[#C2994D] font-semibold"><i class="fas fa-bible mr-2"></i>Fundamento Bíblico</span>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Nossa Fé</h2>
+                    <p class="text-gray-600 text-justify leading-relaxed mb-6">
+                        A Regra de Fé Oficial da IBRG é a Palavra de Deus expressa na Bíblia Sagrada. Cremos nas Escrituras como inspiradas verbalmente por Deus, infalíveis e de autoridade suprema de fé e prática.
+                    </p>
+                    <p class="text-gray-600 text-justify leading-relaxed mb-8">
+                        Nossa doutrina está fundamentada em verdades como a Trindade, a salvação pela fé, a ressurreição de Cristo, a volta do Senhor e as ordenanças bíblicas do batismo e da Ceia do Senhor.
+                    </p>
+                    <a href="pages/nossa-fe.html" class="btn-primary inline-flex items-center px-8 py-3 rounded-lg font-medium">
+                        Nossa declaração de fé
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="flex-1 w-full">
+                    <div class="relative rounded-xl overflow-hidden shadow-2xl">
+                        <img src="/img/bible.jpg" alt="Bíblia Aberta" class="w-full h-[420px] object-cover" onerror="this.src='/img/bg.jpg'">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <p class="text-white text-sm italic">
+                                <i class="fas fa-quote-left mr-1"></i> Toda a Escritura é inspirada por Deus e útil para o ensino
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Atividades Section -->
+    <section id="atividades" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4 section-title">Nossas Atividades</h2>
+            <p class="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                Conheça algumas de nossas programações e venha participar conosco.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- EBD -->
+                <div class="activity-card bg-white">
+                    <div class="activity-image">
+                        <img src="img/atividades/EBD.png" alt="Escola Bíblica Dominical">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-[#C2994D] text-white p-2 rounded mr-3">
+                                <i class="fas fa-book-bible text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">EBD – Escola Bíblica Dominical</h3>
+                        </div>
+                        <p class="text-gray-500 mb-4 flex items-center">
+                            <i class="fas fa-calendar-day mr-2 text-[#C2994D]"></i> Domingo, às 8h30
+                        </p>
+                        <p class="text-gray-600 text-justify leading-relaxed">
+                            Ensino sistemático da Palavra de Deus, dividido por faixas etárias. Foco em doutrina e
+                            discipulado visando o crescimento e fortalecimento espiritual da igreja.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Culto Noturno -->
+                <div class="activity-card bg-white">
+                    <div class="activity-image">
+                        <img src="img/atividades/noturno.jfif" alt="Culto Noturno">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-[#C2994D] text-white p-2 rounded mr-3">
+                                <i class="fas fa-church text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Culto Noturno</h3>
+                        </div>
+                        <p class="text-gray-500 mb-4 flex items-center">
+                            <i class="fas fa-calendar-day mr-2 text-[#C2994D]"></i> Domingo, às 18h
+                        </p>
+                        <p class="text-gray-600 text-justify leading-relaxed">
+                            Realizado aos domingos, às 18h, o culto noturno é momento de adoração, comunhão e pregação
+                            da Palavra, onde a Igreja é edificada, fortalecida na fé e dedica-se à exaltação de Cristo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Culto de Oração -->
+                <div class="activity-card bg-white">
+                    <div class="activity-image">
+                        <img src="img/atividades/orar.jpg" alt="Culto de Oração">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <div class="bg-[#C2994D] text-white p-2 rounded mr-3">
+                                <i class="fas fa-praying-hands text-lg"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Culto de Oração</h3>
+                        </div>
+                        <p class="text-gray-500 mb-4 flex items-center">
+                            <i class="fas fa-calendar-day mr-2 text-[#C2994D]"></i> Quarta-feira, às 19h
+                        </p>
+                        <p class="text-gray-600 text-justify leading-relaxed">
+                            Reunião dos irmãos para cultuarem ao Senhor, compartilharem seus pedidos e estarem juntos
+                            em oração, pedindo a ajuda e direção do Senhor. Momento de intercessão e comunhão dos santos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botões -->
+        <div class="flex flex-col sm:flex-row items-center justify-center mt-12 gap-4">
+            <a class='btn-outline inline-flex items-center justify-center px-8 py-3 rounded-md font-medium hover:bg-[#C2994D] hover:text-white transition duration-300' href='/pages/contato.html'>
+                <i class="fas fa-envelope mr-2"></i>Fale Conosco
+            </a>
+            <a class='btn-primary inline-flex items-center justify-center px-8 py-3 rounded-md font-medium' href='/pages/programacoes.html'>
+                <i class="fas fa-calendar-alt mr-2"></i>Ver Mais
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-gray-700 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="/img/logo.png" alt="logo" class="h-20 mr-3">
+                        <span class="text-lg font-bold text-gray-800">Igreja Batista Regular da Graça</span>
+                    </div>
+                    <p class="text-gray-600">Pela graça sois salvos, mediante a fé. <span
+                            class="font-semibold italic">Efésios 2:8</span></p>
+                </div>
+                <div>
+                    <h6 class="font-semibold text-lg text-gray-800 mb-4">Links Rápidos</h6>
+                    <ul class="space-y-2">
+                        <li><a href="#quem-somos" class="hover:text-[#C2994D] transition duration-300">Quem Somos</a>
+                        </li>
+                        <li><a href="pages/historia.html" class="hover:text-[#C2994D] transition duration-300">Nossa
+                                História</a></li>
+                        <li><a href="pages/nossa-fe.html" class="hover:text-[#C2994D] transition duration-300">Nossa
+                                Fé</a></li>
+                        <li><a class='hover:text-[#C2994D] transition duration-300'
+                                href='/pages/programacoes.html'>Programações</a></li>
+                        <li><a class='hover:text-[#C2994D] transition duration-300'
+                                href='/pages/missionarios.html'>Missionários</a></li>
+                        <li><a class='hover:text-[#C2994D] transition duration-300'
+                                href='/pages/congregacoes.html'>Congregações</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold text-lg text-gray-800 mb-4">Contato</h6>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-[#C2994D]"></i>
+                            <a href="https://maps.app.goo.gl/49ebvr2c8xGz1hGT9" target="_blank"
+                                class="text-gray-700 hover:text-[#C2994D] transition duration-300">R. Belo Horizonte,
+                                675 - Adrianópolis, Manaus - AM, 69057-060</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-[#C2994D]"></i>
+                            <a href="tel:92996188161"
+                                class="text-gray-700 hover:text-[#C2994D] transition duration-300">(92) 99618-8161</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-[#C2994D]"></i>
+                            <a href="mailto:ibrgmanaus@gmail.com"
+                                class="text-gray-700 hover:text-[#C2994D] transition duration-300"
+                                target="_blank">ibrgmanaus@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold text-lg text-gray-800 mb-4">Redes Sociais</h6>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/ibrg_am/" target="_blank"
+                            class="text-gray-700 hover:text-[#C2994D] text-xl transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@igrejabatistaregulardagrac1279" target="_blank"
+                            class="text-gray-700 hover:text-[#C2994D] text-xl transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://wa.me/5592996188161" target="_blank"
+                            class="text-gray-700 hover:text-[#C2994D] text-xl transition duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <div class="mt-6">
+                        <a class='bg-[#C2994D] hover:bg-[#A67C36] text-white px-4 py-2 rounded-md font-medium transition duration-300 shadow-md inline-flex items-center'
+                            href='/pages/contato.html#cnpj-section'>
+                            <i class="fas fa-heart mr-2"></i>Ofertar
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-300 mt-8 pt-8 text-center text-gray-600">
+                <p>&copy; 2025 Igreja Batista Regular da Graça. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

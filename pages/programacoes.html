@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programações - IBRG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/pages.css">
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Navbar -->
+    <nav class="shadow-md sticky top-0 z-50 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center hover:opacity-90 transition-opacity">
+                        <img src="/img/logo.png" alt="Logo IBRG" class="h-20 mr-3">
+                        <span class="text-lg md:text-xl font-bold text-gray-800">Igreja Batista Regular da Graça</span>
+                    </a>
+                </div>
+
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a class='nav-item text-gray-700 px-3 py-2 font-medium' href='/'>Início</a>
+
+                    <div class="relative group">
+                        <button class="nav-item text-gray-700 px-3 py-2 font-medium flex items-center">
+                            Sobre Nós
+                            <i class="fas fa-chevron-down ml-2 text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-1 group-hover:translate-y-0">
+                            <a href="../index.html#quem-somos" class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Quem Somos</a>
+                            <a href="historia.html" class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Nossa História</a>
+                            <a href="../index.html#pastor" class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Nosso Pastor</a>
+                            <a href="nossa-fe.html" class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Nossa Fé</a>
+                        </div>
+                    </div>
+
+                    <a href="programacoes.html" class="nav-item text-gray-700 px-3 py-2 font-medium">Programações</a>
+
+                    <div class="relative group">
+                        <button class="nav-item text-gray-700 px-3 py-2 font-medium flex items-center">
+                            Missões
+                            <i class="fas fa-chevron-down ml-2 text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-1 group-hover:translate-y-0">
+                            <a class='block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200' href='missionarios.html'>Missionários</a>
+                            <a class='block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200' href='congregacoes.html'>Congregações</a>
+                        </div>
+                    </div>
+
+                    <a class='nav-item text-gray-700 px-3 py-2 font-medium' href='contato.html'>Contato</a>
+
+                    <a class='btn-primary px-6 py-2 rounded-md font-medium ml-2' href='contato.html#cnpj-section'>
+                        <i class="fas fa-heart mr-2"></i>Ofertar
+                    </a>
+                </div>
+
+                <!-- Botão Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 focus:outline-none p-2 rounded-md hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white shadow-lg">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a class='block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors' href='/'>Início</a>
+
+                <div class="relative">
+                    <button id="mobile-dropdown-button-1" class="w-full flex justify-between items-center px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">
+                        <span>Sobre Nós</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+
+                    <div id="mobile-dropdown-1" class="hidden pl-4 mt-1 space-y-1">
+                        <a href="../index.html#quem-somos" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Quem Somos</a>
+                        <a href="historia.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Nossa História</a>
+                        <a href="../index.html#pastor" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Nosso Pastor</a>
+                        <a href="nossa-fe.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Nossa Fé</a>
+                    </div>
+                </div>
+
+                <a href="programacoes.html" class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Programações</a>
+
+                <div class="relative">
+                    <button id="mobile-dropdown-button-2" class="w-full flex justify-between items-center px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">
+                        <span>Missões</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+
+                    <div id="mobile-dropdown-2" class="hidden pl-4 mt-1 space-y-1">
+                        <a class='block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors' href='missionarios.html'>Missionários</a>
+                        <a class='block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors' href='congregacoes.html'>Congregações</a>
+                    </div>
+                </div>
+
+                <a class='block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors' href='contato.html'>Contato</a>
+
+                <a class='block w-full text-center btn-primary px-4 py-3 rounded-md font-medium mt-2' href='contato.html#cnpj-section'>
+                    <i class="fas fa-heart mr-2"></i>Ofertar
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Showcase -->
+    <section id="showcase" class="showcase-programacoes">
+        <div style="position: relative; z-index: 1;" class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">Nossas Programações</h1>
+            <p class="text-xl md:text-2xl lg:text-3xl text-white italic">"Não deixemos de reunir-nos como igreja, segundo o costume de alguns..."</p>
+            <p class="text-white mt-4 font-bold">Hebreus 10:25</p>
+
+            <div class="mt-6">
+                <a href="#programacoes" class="btn-primary inline-flex items-center px-8 py-3 text-lg rounded-full">
+                    Ver todas as atividades <i class="fas fa-arrow-down ml-2 animate-bounce"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introdução -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-5xl text-center">
+            <div class="inline-block bg-[#F3E9D6] rounded-full px-6 py-2 mb-6">
+                <span class="text-[#C2994D] font-semibold"><i class="fas fa-calendar-alt mr-2"></i>Vida na Igreja</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Atividades Desenvolvidas na IBRG</h2>
+            <p class="text-lg md:text-xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
+                Nossa igreja oferece diversas atividades ao longo da semana para todas as idades. 
+                Cada programação é pensada para promover o crescimento espiritual, a comunhão entre os irmãos 
+                e o cumprimento da Grande Comissão. Venha participar conosco!
+            </p>
+        </div>
+    </section>
+
+    <!-- Programações -->
+    <section id="programacoes" class="py-16 bg-gray-50 program-section">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto">
+                
+                <!-- 1. EBD - Escola Bíblica Dominical -->
+                <div class="program-card bg-white">
+                    <div class="program-image">
+                        <img src="/img/atividades/EBD.png" alt="Escola Bíblica Dominical">
+                    </div>
+                    <div class="program-content">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <span class="program-day"><i class="fas fa-calendar-day mr-2"></i> Domingo</span>
+                            <span class="program-time"><i class="fas fa-clock mr-2"></i> 8h30</span>
+                        </div>
+                        <h3 class="program-title">EBD – Escola Bíblica Dominical</h3>
+                        <p class="program-description">
+                            Atividade realizada aos domingos, pela manhã, com início às 8h30. Tem como objetivo o ensino da palavra de Deus de forma sistemática. 
+                            O ensino é dividido por faixa etária, de forma a facilitar e dinamizar o aprendizado das Sagradas Escrituras. 
+                            É voltada para os ensinos bíblicos de doutrina e discipulado, promovendo o crescimento e fortalecimento espiritual da Igreja.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. Culto Noturno -->
+                <div class="program-card bg-white">
+                    <div class="program-image">
+                        <img src="/img/atividades/noturno.jfif" alt="Culto Noturno">
+                    </div>
+                    <div class="program-content">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <span class="program-day"><i class="fas fa-calendar-day mr-2"></i> Domingo</span>
+                            <span class="program-time"><i class="fas fa-clock mr-2"></i> 18h</span>
+                        </div>
+                        <h3 class="program-title">Culto Noturno</h3>
+                        <p class="program-description">
+                            Realizado aos domingos, às 18h, o culto noturno é um momento dedicado à adoração, à comunhão entre os irmãos e à pregação da Palavra. Durante esse tempo, a Igreja é edificada por meio do ensino bíblico, fortalecida na fé e orientada a viver de acordo com os princípios cristãos. É também uma oportunidade de, juntos, exaltarem a Cristo com reverência e propósito.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3. EBEC - Escola Bíblica Evangelizadora de Crianças -->
+                <div class="program-card bg-white">
+                    <div class="program-image">
+                        <img src="/img/atividades/EBEC.png" alt="Escola Bíblica Evangelizadora de Crianças">
+                    </div>
+                    <div class="program-content">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <span class="program-day"><i class="fas fa-calendar-day mr-2"></i> Sábado</span>
+                            <span class="program-time"><i class="fas fa-clock mr-2"></i> 15h</span>
+                        </div>
+                        <h3 class="program-title">EBEC – Escola Bíblica Evangelizadora de Crianças</h3>
+                        <p class="program-description">
+                            Atividade realizada aos sábados, com início às 15h, para crianças e adolescentes. A EBEC baseia seu currículo em toda a Bíblia, 
+                            de Gênesis a Apocalipse, em um ciclo de quatro anos. Momentos de aprendizado da Palavra de Deus, cânticos, memorização de versículos, 
+                            brincadeiras e lanche.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. Culto de Oração -->
+                <div class="program-card bg-white">
+                    <div class="program-image">
+                        <img src="/img/atividades/orar.jpg" alt="Culto de Oração">
+                    </div>
+                    <div class="program-content">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <span class="program-day"><i class="fas fa-calendar-day mr-2"></i> Quarta-feira</span>
+                            <span class="program-time"><i class="fas fa-clock mr-2"></i> 19h</span>
+                        </div>
+                        <h3 class="program-title">Culto de Oração</h3>
+                        <p class="program-description">
+                            Reunião dos irmãos para cultuarem ao Senhor, compartilharem seus pedidos e estarem juntos em oração, pedindo a ajuda e direção do Senhor. 
+                            Momento de intercessão e comunhão dos santos. Realizado toda quarta-feira, às 19h.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5. Sociedade Feminina -->
+                <div class="program-card bg-white">
+                    <div class="program-image">
+                        <img src="/img/programacoes/sociedade-feminina.jpg" alt="Sociedade Feminina">
+                    </div>
+                    <div class="program-content">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <span class="program-day"><i class="fas fa-calendar-day mr-2"></i> Segunda-feira</span>
+                            <span class="program-time"><i class="fas fa-clock mr-2"></i> 19h</span>
+                        </div>
+                        <h3 class="program-title">Sociedade Feminina</h3>
+                        <p class="program-description">
+                            Reunião de Mulheres, realizado toda segunda-feira, 19h. Tem a finalidade de ensino da Palavra voltado às necessidades femininas, 
+                            buscando o padrão de Deus para a mulher. Com momentos de oração e intercessão por familiares e amigos descrentes, 
+                            confiando na graça e misericórdia de Deus para alcançá-los.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 6. Culto de Jovens -->
+                <div class="program-card bg-white">
+                    <div class="program-image">
+                        <img src="/img/programacoes/culto-jovens.jpg" alt="Culto de Jovens">
+                    </div>
+                    <div class="program-content">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <span class="program-day"><i class="fas fa-calendar-day mr-2"></i> Sábado</span>
+                            <span class="program-time"><i class="fas fa-clock mr-2"></i> 18h</span>
+                        </div>
+                        <h3 class="program-title">Culto de Jovens</h3>
+                        <p class="program-description">
+                            Reunião de jovens, aos sábados, 18h, para aprendizado da Palavra de Deus, comunhão e tempo de brincadeiras e gincanas. 
+                            Um espaço especial para os jovens crescerem na fé, fazerem amizades e se divertirem em um ambiente saudável.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 7. Culto no Lar -->
+                <div class="program-card bg-white">
+                    <div class="program-image">
+                        <img src="/img/programacoes/culto-lar.jpg" alt="Culto no Lar">
+                    </div>
+                    <div class="program-content">
+                        <div class="flex flex-wrap items-center gap-3 mb-3">
+                            <span class="program-day"><i class="fas fa-calendar-day mr-2"></i> Sexta-feira</span>
+                            <span class="program-time"><i class="fas fa-clock mr-2"></i> 19h</span>
+                        </div>
+                        <h3 class="program-title">Culto no Lar</h3>
+                        <p class="program-description">
+                            Culto ao Senhor realizado às sextas-feiras, na casa dos irmãos da igreja, com o intuito de adoração ao Senhor e testemunho cristão 
+                            aos parentes e vizinhos não-convertidos. Uma oportunidade de levar o evangelho para dentro dos lares e alcançar novas vidas.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resumo da Semana -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4 section-title">Programação Semanal</h2>
+            <p class="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                Resumo de todas as atividades da semana em um só lugar
+            </p>
+
+            <div class="max-w-4xl mx-auto space-y-4">
+                <!-- Segunda -->
+                <div class="schedule-card p-5">
+                    <div class="schedule-item flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
+                        <div class="flex flex-wrap items-center gap-3 sm:gap-6">
+                            <span class="schedule-day text-base sm:text-lg"><i class="fas fa-calendar-day mr-2 text-[#C2994D]"></i>SEGUNDA</span>
+                            <span class="schedule-time"><i class="fas fa-clock mr-1 text-gray-400"></i>19h00</span>
+                        </div>
+                        <div class="flex-1">
+                            <span class="schedule-title font-semibold text-gray-800 text-base sm:text-lg">Sociedade Feminina</span>
+                            <span class="text-gray-500 text-sm ml-0 sm:ml-2 block sm:inline-block mt-1 sm:mt-0">Reunião de mulheres</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400 hidden sm:block"></i>
+                    </div>
+                </div>
+
+                <!-- Quarta -->
+                <div class="schedule-card p-5">
+                    <div class="schedule-item flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
+                        <div class="flex flex-wrap items-center gap-3 sm:gap-6">
+                            <span class="schedule-day text-base sm:text-lg"><i class="fas fa-calendar-day mr-2 text-[#C2994D]"></i>QUARTA</span>
+                            <span class="schedule-time"><i class="fas fa-clock mr-1 text-gray-400"></i>19h00</span>
+                        </div>
+                        <div class="flex-1">
+                            <span class="schedule-title font-semibold text-gray-800 text-base sm:text-lg">Culto de Oração</span>
+                            <span class="text-gray-500 text-sm ml-0 sm:ml-2 block sm:inline-block mt-1 sm:mt-0">Intercessão e comunhão</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400 hidden sm:block"></i>
+                    </div>
+                </div>
+
+                <!-- Sexta -->
+                <div class="schedule-card p-5">
+                    <div class="schedule-item flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
+                        <div class="flex flex-wrap items-center gap-3 sm:gap-6">
+                            <span class="schedule-day text-base sm:text-lg"><i class="fas fa-calendar-day mr-2 text-[#C2994D]"></i>SEXTA</span>
+                            <span class="schedule-time"><i class="fas fa-clock mr-1 text-gray-400"></i>19h00</span>
+                        </div>
+                        <div class="flex-1">
+                            <span class="schedule-title font-semibold text-gray-800 text-base sm:text-lg">Culto no Lar</span>
+                            <span class="text-gray-500 text-sm ml-0 sm:ml-2 block sm:inline-block mt-1 sm:mt-0">Nas casas dos irmãos</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400 hidden sm:block"></i>
+                    </div>
+                </div>
+
+                <!-- Sábado - EBEC -->
+                <div class="schedule-card p-5">
+                    <div class="schedule-item flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
+                        <div class="flex flex-wrap items-center gap-3 sm:gap-6">
+                            <span class="schedule-day text-base sm:text-lg"><i class="fas fa-calendar-day mr-2 text-[#C2994D]"></i>SÁBADO</span>
+                            <span class="schedule-time"><i class="fas fa-clock mr-1 text-gray-400"></i>15h00</span>
+                        </div>
+                        <div class="flex-1">
+                            <span class="schedule-title font-semibold text-gray-800 text-base sm:text-lg">EBEC</span>
+                            <span class="text-gray-500 text-sm ml-0 sm:ml-2 block sm:inline-block mt-1 sm:mt-0">Crianças e adolescentes</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400 hidden sm:block"></i>
+                    </div>
+                </div>
+
+                <!-- Sábado - Jovens -->
+                <div class="schedule-card p-5">
+                    <div class="schedule-item flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
+                        <div class="flex flex-wrap items-center gap-3 sm:gap-6">
+                            <span class="schedule-day text-base sm:text-lg"><i class="fas fa-calendar-day mr-2 text-[#C2994D]"></i>SÁBADO</span>
+                            <span class="schedule-time"><i class="fas fa-clock mr-1 text-gray-400"></i>18h00</span>
+                        </div>
+                        <div class="flex-1">
+                            <span class="schedule-title font-semibold text-gray-800 text-base sm:text-lg">Culto de Jovens</span>
+                            <span class="text-gray-500 text-sm ml-0 sm:ml-2 block sm:inline-block mt-1 sm:mt-0">Jovens em comunhão</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400 hidden sm:block"></i>
+                    </div>
+                </div>
+
+                <!-- Domingo - EBD -->
+                <div class="schedule-card p-5">
+                    <div class="schedule-item flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
+                        <div class="flex flex-wrap items-center gap-3 sm:gap-6">
+                            <span class="schedule-day text-base sm:text-lg"><i class="fas fa-calendar-day mr-2 text-[#C2994D]"></i>DOMINGO</span>
+                            <span class="schedule-time"><i class="fas fa-clock mr-1 text-gray-400"></i>8h30</span>
+                        </div>
+                        <div class="flex-1">
+                            <span class="schedule-title font-semibold text-gray-800 text-base sm:text-lg">EBD</span>
+                            <span class="text-gray-500 text-sm ml-0 sm:ml-2 block sm:inline-block mt-1 sm:mt-0">Escola Bíblica Dominical</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400 hidden sm:block"></i>
+                    </div>
+                </div>
+
+                <!-- Domingo - Noturno -->
+                <div class="schedule-card p-5">
+                    <div class="schedule-item flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4">
+                        <div class="flex flex-wrap items-center gap-3 sm:gap-6">
+                            <span class="schedule-day text-base sm:text-lg"><i class="fas fa-calendar-day mr-2 text-[#C2994D]"></i>DOMINGO</span>
+                            <span class="schedule-time"><i class="fas fa-clock mr-1 text-gray-400"></i>18h00</span>
+                        </div>
+                        <div class="flex-1">
+                            <span class="schedule-title font-semibold text-gray-800 text-base sm:text-lg">Culto Noturno</span>
+                            <span class="text-gray-500 text-sm ml-0 sm:ml-2 block sm:inline-block mt-1 sm:mt-0">Adoração e pregação</span>
+                        </div>
+                        <i class="fas fa-chevron-right text-gray-400 hidden sm:block"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Convite -->
+    <section class="py-20 text-white" style="background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/img/atividades/noturno.jfif') no-repeat center/cover; background-attachment: fixed; position: relative; overflow: hidden;">
+        <div class="container mx-auto px-6 text-center" style="position: relative; z-index: 1;">
+            <i class="fas fa-praying-hands text-5xl mb-6 opacity-75"></i>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Venha nos Visitar!</h2>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
+                Todas as nossas programações são abertas ao público. 
+                Ficaremos felizes em recebê-lo em nossa igreja!
+            </p>
+            <div class="mt-10 flex flex-wrap gap-4 justify-center">
+                <a href="contato.html" class="btn-primary px-8 py-3 rounded-md font-medium inline-flex items-center">
+                    <i class="fas fa-map-marker-alt mr-2"></i>Como Chegar
+                </a>
+                <a href="contato.html" class="btn-outline border-white text-white hover:bg-white hover:text-[#C2994D] px-8 py-3 rounded-md font-medium inline-flex items-center" style="border: 2px solid white; transition: all 0.3s ease;">
+                    <i class="fas fa-envelope mr-2"></i>Fale Conosco
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-gray-700 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="/img/logo.png" alt="logo" class="h-20 mr-3">
+                        <span class="text-lg font-bold text-gray-800">Igreja Batista Regular da Graça</span>
+                    </div>
+                    <p class="text-gray-600">Pela graça sois salvos, mediante a fé. <span class="font-semibold italic">Efésios 2:8</span></p>
+                </div>
+                <div>
+                    <h6 class="font-semibold text-lg text-gray-800 mb-4">Links Rápidos</h6>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html#quem-somos" class="hover:text-[#C2994D] transition duration-300">Quem Somos</a></li>
+                        <li><a href="historia.html" class="hover:text-[#C2994D] transition duration-300">Nossa História</a></li>
+                        <li><a href="nossa-fe.html" class="hover:text-[#C2994D] transition duration-300">Nossa Fé</a></li>
+                        <li><a href="programacoes.html" class="hover:text-[#C2994D] transition duration-300">Programações</a></li>
+                        <li><a href="missionarios.html" class="hover:text-[#C2994D] transition duration-300">Missionários</a></li>
+                        <li><a href="congregacoes.html" class="hover:text-[#C2994D] transition duration-300">Congregações</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold text-lg text-gray-800 mb-4">Contato</h6>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-[#C2994D]"></i>
+                            <a href="https://maps.app.goo.gl/49ebvr2c8xGz1hGT9" target="_blank" class="text-gray-700 hover:text-[#C2994D] transition duration-300">R. Belo Horizonte, 675 - Adrianópolis, Manaus - AM, 69057-060</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-[#C2994D]"></i>
+                            <a href="tel:(92) 99618-8161" class="text-gray-700 hover:text-[#C2994D] transition duration-300">(92) 99618-8161</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-[#C2994D]"></i>
+                            <a href="mailto:ibrgmanaus@gmail.com" class="text-gray-700 hover:text-[#C2994D] transition duration-300" target="_blank">ibrgmanaus@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold text-lg text-gray-800 mb-4">Redes Sociais</h6>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/ibrg_am/" target="_blank" class="text-gray-700 hover:text-[#C2994D] text-xl transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@igrejabatistaregulardagrac1279" target="_blank" class="text-gray-700 hover:text-[#C2994D] text-xl transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://wa.me/5592996188161" target="_blank" class="text-gray-700 hover:text-[#C2994D] text-xl transition duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <div class="mt-6">
+                        <a class='bg-[#C2994D] hover:bg-[#A67C36] text-white px-4 py-2 rounded-md font-medium transition duration-300 shadow-md inline-flex items-center' href='contato.html#cnpj-section'>
+                            <i class="fas fa-heart mr-2"></i>Ofertar
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-300 mt-8 pt-8 text-center text-gray-600">
+                <p>&copy; 2025 Igreja Batista Regular da Graça. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <div class="scroll-top-btn" id="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="/js/script.js"></script>
+    <script>
+        // Menu mobile toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+            });
+        }
+
+        // Dropdown mobile toggle - Sobre Nós
+        const mobileDropdownButton1 = document.getElementById('mobile-dropdown-button-1');
+        const mobileDropdown1 = document.getElementById('mobile-dropdown-1');
+        if (mobileDropdownButton1 && mobileDropdown1) {
+            const chevronIcon1 = mobileDropdownButton1.querySelector('i');
+            mobileDropdownButton1.addEventListener('click', () => {
+                mobileDropdown1.classList.toggle('hidden');
+                chevronIcon1.classList.toggle('rotate-180');
+            });
+        }
+
+        // Dropdown mobile toggle - Missões
+        const mobileDropdownButton2 = document.getElementById('mobile-dropdown-button-2');
+        const mobileDropdown2 = document.getElementById('mobile-dropdown-2');
+        if (mobileDropdownButton2 && mobileDropdown2) {
+            const chevronIcon2 = mobileDropdownButton2.querySelector('i');
+            mobileDropdownButton2.addEventListener('click', () => {
+                mobileDropdown2.classList.toggle('hidden');
+                chevronIcon2.classList.toggle('rotate-180');
+            });
+        }
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+        
+        if (scrollTopBtn) {
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

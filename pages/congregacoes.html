@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congregações - IBRG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/missionaries.css">
+    <link rel="stylesheet" href="/css/pages.css">
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Navbar -->
+    <nav class="shadow-md sticky top-0 z-50 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex items-center hover:opacity-90 transition-opacity">
+                        <img src="/img/logo.png" alt="Logo IBRG" class="h-20 mr-3">
+                        <span class="text-lg md:text-xl font-bold text-gray-800">Igreja Batista Regular da Graça</span>
+                    </a>
+                </div>
+
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="../index.html" class="nav-item text-gray-700 px-3 py-2 font-medium">Início</a>
+
+                    <div class="relative group">
+                        <button class="nav-item text-gray-700 px-3 py-2 font-medium flex items-center">
+                            Sobre Nós
+                            <i
+                                class="fas fa-chevron-down ml-2 text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div
+                            class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-1 group-hover:translate-y-0">
+                            <a href="../index.html#quem-somos"
+                                class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Quem
+                                Somos</a>
+                            <a href="historia.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Nossa
+                                História</a>
+                            <a href="../index.html#pastor"
+                                class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Nosso
+                                Pastor</a>
+                            <a href="nossa-fe.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200"
+                                >Nossa Fé</a>
+                        </div>
+                    </div>
+
+                    <a href="programacoes.html" class="nav-item text-gray-700 px-3 py-2 font-medium">Programações</a>
+
+                    <div class="relative group">
+                        <button class="nav-item text-gray-700 px-3 py-2 font-medium flex items-center">
+                            Missões
+                            <i
+                                class="fas fa-chevron-down ml-2 text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div
+                            class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-1 group-hover:translate-y-0">
+                            <a href="missionarios.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6]">Missionários</a>
+                            <a href="congregacoes.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6]">Congregações</a>
+                        </div>
+                    </div>
+
+                    <a href="contato.html" class="nav-item text-gray-700 px-3 py-2 font-medium">Contato</a>
+
+                    <a href="contato.html#cnpj-section"
+                        class="btn-primary px-6 py-2 rounded-md font-medium ml-2">
+                        <i class="fas fa-heart mr-2"></i>Ofertar
+                    </a>
+                </div>
+
+                <!-- Botão Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button"
+                        class="text-gray-700 focus:outline-none p-2 rounded-md hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white shadow-lg">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="../index.html"
+                    class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Início</a>
+
+                <div class="relative">
+                    <button id="mobile-dropdown-button-1"
+                        class="w-full flex justify-between items-center px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">
+                        <span>Sobre Nós</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+
+                    <div id="mobile-dropdown-1" class="hidden pl-4 mt-1 space-y-1">
+                        <a href="../index.html#quem-somos"
+                            class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Quem
+                            Somos</a>
+                        <a href="../index.html#pastor"
+                            class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Nosso
+                            Pastor</a>
+                        <a href="nossa-fe.html"
+                            class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Nossa Fé</a>
+                    </div>
+                </div>
+
+                <a href="programacoes.html"
+                    class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Programações</a>
+
+                <div class="relative">
+                    <button id="mobile-dropdown-button-2"
+                        class="w-full flex justify-between items-center px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">
+                        <span>Missões</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+
+                    <div id="mobile-dropdown-2" class="hidden pl-4 mt-1 space-y-1">
+                        <a href="missionarios.html"
+                            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Missionários</a>
+                        <a href="congregacoes.html"
+                            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Congregações</a>
+                    </div>
+                </div>
+
+                <a href="contato.html"
+                    class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Contato</a>
+
+                <a href="contato.html#cnpj-section"
+                    class="block w-full text-center btn-primary px-4 py-3 rounded-md font-medium mt-2">
+                    <i class="fas fa-heart mr-2"></i>Ofertar
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Showcase -->
+    <section id="showcase" class="showcase-congregations">
+        <div id="showcase-container" class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Nossas Congregações</h1>
+            <p id="verse" class="text-xl md:text-2xl lg:text-3xl">"E todos os dias acrescentava o Senhor à igreja aqueles que se haviam de salvar."</p>
+            <span id="ref" class="mt-4">Atos 2:47</span>
+            
+            <div class="mt-6">
+                <a href="#congregacoes" class="btn-primary inline-flex items-center px-8 py-3 text-lg rounded-full">
+                    Conheça nossas congregações <i class="fas fa-arrow-down ml-2 animate-bounce"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Congregações Section -->
+    <section id="congregacoes" class="py-20 bg-white">
+        <div class="container mx-auto px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 section-title">Nossas Congregações</h2>
+            <p class="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-8 text-justify">
+                Conheça as congregações que, unidas à Igreja Batista Regular da Graça, trabalham com dedicação no ensino da Palavra, no discipulado e na evangelização, levando a mensagem transformadora de Cristo a diferentes regiões.
+            </p>
+
+            <!-- Search Bar -->
+            <div class="mb-12 max-w-3xl mx-auto">
+                <form id="searchCongregationForm" class="flex flex-col md:flex-row gap-4">
+                    <input type="text" id="searchCongregationInput" placeholder="Pesquisar por nome, pastor ou local"
+                        class="flex-grow px-6 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#C2994D] focus:border-transparent text-lg">
+                    <button type="submit"
+                        class="btn-primary px-8 py-3 rounded-lg font-medium flex items-center justify-center">
+                        <i class="fas fa-search mr-2"></i>Pesquisar
+                    </button>
+                </form>
+            </div>
+
+            <!-- Congregações Grid -->
+            <div id="congregationsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- As congregações serão inseridas aqui via JavaScript -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-12 flex justify-center">
+                <div class="flex flex-wrap items-center justify-center gap-2">
+                    <button id="prevPage"
+                        class="px-6 py-2 rounded-md btn-primary disabled:opacity-50 disabled:cursor-not-allowed">
+                        <i class="fas fa-chevron-left mr-2"></i> Anterior
+                    </button>
+
+                    <div id="pageNumbers" class="flex flex-wrap gap-2">
+                        <!-- Páginas serão geradas dinamicamente -->
+                    </div>
+
+                    <button id="nextPage"
+                        class="px-6 py-2 rounded-md btn-primary disabled:opacity-50 disabled:cursor-not-allowed">
+                        Próximo <i class="fas fa-chevron-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal de Detalhes da Congregação -->
+    <div id="congregationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white w-full max-w-4xl mx-4 rounded-xl overflow-auto max-h-[90vh] shadow-2xl relative">
+            <button id="closeCongregationModal" class="absolute top-4 right-4 text-gray-500 hover:text-red-500 text-2xl z-10">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="grid md:grid-cols-2 gap-6 p-8">
+                <div class="relative overflow-hidden rounded-lg">
+                    <img id="modalCongregationImage" src="" alt="Congregação" class="w-full h-full object-cover rounded-lg shadow-md">
+                </div>
+                <div>
+                    <h2 id="modalCongregationName" class="text-2xl md:text-3xl font-bold mb-4 text-gray-800"></h2>
+                    <p id="modalCongregationDescription" class="text-gray-600 mb-6"></p>
+                    
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-start">
+                            <div class="bg-[#F3E9D6] p-2 rounded-full mr-3">
+                                <i class="fas fa-map-marker-alt text-[#C2994D]"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-700">Localização</h4>
+                                <p id="modalLocation" class="text-gray-600"></p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-[#F3E9D6] p-2 rounded-full mr-3">
+                                <i class="fas fa-user-tie text-[#C2994D]"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-700">Pastor Responsável</h4>
+                                <p id="modalPastor" class="text-gray-600"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                        <button id="modalDirectionsLink" class="btn-primary px-6 py-3 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-directions mr-2"></i> Como chegar
+                        </button>
+                        <button id="modalContactLink" class="btn-outline px-6 py-3 rounded-lg flex items-center justify-center border-[#C2994D] text-[#C2994D] hover:bg-[#C2994D] hover:text-white">
+                            <i class="fas fa-phone mr-2"></i> Contato
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-gray-700 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="/img/logo.png" alt="logo" class="h-20 mr-3">
+                        <span class="text-lg font-bold text-gray-800">Igreja Batista Regular da Graça</span>
+                    </div>
+                    <p class="text-gray-600">Pela graça sois salvos, mediante a fé. <span
+                            class="font-semibold italic">Efésios 2:8</span></p>
+                </div>
+                <div>
+                    <h6 class="font-semibold text-lg text-gray-800 mb-4">Links Rápidos</h6>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html#quem-somos" class="hover:text-[#C2994D] transition duration-300">Quem Somos</a></li>
+                        <li><a href="historia.html" class="hover:text-[#C2994D] transition duration-300">Nossa História</a></li>
+                        <li><a href="nossa-fe.html" class="hover:text-[#C2994D] transition duration-300">Nossa Fé</a></li>
+                        <li><a href="programacoes.html" class="hover:text-[#C2994D] transition duration-300">Programações</a></li>
+                        <li><a href="missionarios.html" class="hover:text-[#C2994D] transition duration-300">Missionários</a></li>
+                        <li><a href="congregacoes.html" class="hover:text-[#C2994D] transition duration-300">Congregações</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold text-lg text-gray-800 mb-4">Contato</h6>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-[#C2994D]"></i>
+                            <a href="https://maps.app.goo.gl/49ebvr2c8xGz1hGT9" target="_blank"
+                                class="text-gray-700 hover:text-[#C2994D] transition duration-300">R. Belo Horizonte,
+                                675 - Adrianópolis, Manaus - AM, 69057-060</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-[#C2994D]"></i>
+                            <a href="tel:92996188161"
+                                class="text-gray-700 hover:text-[#C2994D] transition duration-300">(92)
+                                99618-8161</a>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-[#C2994D]"></i>
+                            <a href="mailto:ibrgmanaus@gmail.com"
+                                class="text-gray-700 hover:text-[#C2994D] transition duration-300"
+                                target="_blank">ibrgmanaus@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold text-lg text-gray-800 mb-4">Redes Sociais</h6>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/ibrg_am/" target="_blank"
+                            class="text-gray-700 hover:text-[#C2994D] text-xl transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@igrejabatistaregulardagrac1279" target="_blank"
+                            class="text-gray-700 hover:text-[#C2994D] text-xl transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://wa.me/5592996188161" target="_blank"
+                            class="text-gray-700 hover:text-[#C2994D] text-xl transition duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <div class="mt-6">
+                        <a href="contato.html#cnpj-section"
+                            class="bg-[#C2994D] hover:bg-[#A67C36] text-white px-4 py-2 rounded-md font-medium transition duration-300 shadow-md inline-flex items-center">
+                            <i class="fas fa-heart mr-2"></i>Ofertar
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-300 mt-8 pt-8 text-center text-gray-600">
+                <p>&copy; 2025 Igreja Batista Regular da Graça. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+    <script src="/js/congregacoes.js"></script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+/* ===========================================
+   ÍNDICE DE ESTILOS - IBR Graça
+   =========================================== */
+
+/* 1. MENU MOBILE
+   2. NAVEGAÇÃO
+   3. SHOWCASE
+   4. CARDS DE ATIVIDADES
+   5. SEÇÃO PASTOR
+   6. SEÇÃO MISSÃO
+   7. BOTÕES
+   8. SEÇÕES
+   9. RESPONSIVO */
+
+/* ===========================================
+   1. MENU MOBILE
+   =========================================== */
+.mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.mobile-menu.open {
+    max-height: 500px;
+    transition: max-height 0.5s ease-in;
+}
+
+/* ===========================================
+   2. NAVEGAÇÃO
+   =========================================== */
+.nav-item {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #c2994d;
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+.nav-item:hover {
+    color: #0D0D0D;
+    transform: translateY(-2px);
+}
+
+/* ===========================================
+   3. SHOWCASE - SEÇÕES HERO
+   =========================================== */
+
+/* Estilo base para todas as seções showcase */
+#showcase {
+    height: 70vh;
+    min-height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: overlay;
+    position: relative;
+}
+
+/* Backgrounds específicos para cada página */
+#showcase.showcase-home {
+    background-image: url('/img/bg.jpg');
+}
+
+#showcase.showcase-missionaries {
+    background-image: url('/img/bg-m.jpg');
+}
+
+#showcase.showcase-congregations {
+    background-image: url('/img/congregacao/bg-c.jpg');
+}
+
+#showcase.showcase-contact {
+    background-image: url('/img/bg.jpg');
+}
+
+#showcase.showcase-faith {
+    background-image: url('/img/bg.jpg');
+}
+
+#showcase.showcase-programacoes {
+    background-image: url('/img/atividades/noturno.jfif');
+}
+
+/* Overlay gradiente no showcase */
+#showcase::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: 0;
+}
+
+/* Container do showcase */
+#showcase-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Títulos do showcase */
+#showcase-container h1 {
+    font-weight: bold;
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+/* Versículos no showcase */
+#showcase-container #verse {
+    font-style: italic;
+    font-size: 1.5rem;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Referência bíblica */
+#ref {
+    font-style: italic;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 0.5rem;
+    display: block;
+    font-size: 1.2rem;
+}
+
+/* ===========================================
+   4. CARDS DE ATIVIDADES
+   =========================================== */
+.activity-card {
+    transition: all 0.3s ease;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.activity-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagem do card de atividade */
+.activity-image {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+.activity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.activity-card:hover .activity-image img {
+    transform: scale(1.1);
+}
+
+/* ===========================================
+   5. SEÇÃO PASTOR
+   =========================================== */
+.pastor-card {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    transition: all 0.4s ease;
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.pastor-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagem do pastor */
+.pastor-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.pastor-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.pastor-card:hover .pastor-image img {
+    transform: scale(1.05);
+}
+
+/* ===========================================
+   6. SEÇÃO MISSÃO
+   =========================================== */
+.mission-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/img/bg-m.jpg') no-repeat center/cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Overlay no mission section */
+.mission-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(194, 153, 77, 0.1);
+    z-index: 0;
+}
+
+.mission-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===========================================
+   7. BOTÕES
+   =========================================== */
+
+/* Botão primário */
+.btn-primary {
+    background-color: #C2994D;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: #A67C36;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* Botão outline (sem fundo) */
+.btn-outline {
+    border: 2px solid #C2994D;
+    color: #C2994D;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background-color: #C2994D;
+    color: white;
+    border-color: #C2994D;
+}
+
+/* ===========================================
+   8. SEÇÕES E ELEMENTOS GERAIS
+   =========================================== */
+
+/* Título de seção com linha inferior */
+.section-title {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2.5rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 4px;
+    bottom: -10px;
+    left: 25%;
+    background-color: #C2994D;
+    border-radius: 2px;
+}
+
+/* Seção da Bíblia */
+.bible-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/img/bible.jpg') no-repeat center/cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Seção de História */
+.historia-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/img/history.jpg') no-repeat center/cover;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Botão Voltar ao Topo */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #C2994D;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 99;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top-btn:hover {
+    background-color: #A67C36;
+    transform: translateY(-3px);
+}
+
+/* ===========================================
+   9. RESPONSIVO - MEDIA QUERIES
+   =========================================== */
+@media (max-width: 768px) {
+    /* Showcase em mobile */
+    #showcase-container h1 {
+        font-size: 2rem;
+    }
+
+    #showcase-container #verse {
+        font-size: 1rem;
+    }
+
+    /* Layout dos containers */
+    #quem-somos-container {
+        flex-direction: column !important;
+    }
+
+    #missionarios-container h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Cards em mobile */
+    .pastor-card {
+        flex-direction: column !important;
+    }
+
+    .activity-card {
+        margin-bottom: 1rem;
+    }
+
+    /* Background attachment scroll no mobile */
+    .mission-section {
+        background-attachment: scroll;
+    }
+
+    .bible-section {
+        background-attachment: scroll;
+    }
+
+    .historia-section {
+        background-attachment: scroll;
+    }
+}

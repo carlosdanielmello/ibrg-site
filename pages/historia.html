@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa História - IBRG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/pages.css">
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Navbar -->
+    <nav class="shadow-md sticky top-0 z-50 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex items-center hover:opacity-90 transition-opacity">
+                        <img src="/img/logo.png" alt="Logo IBRG" class="h-20 mr-3">
+                        <span class="text-lg md:text-xl font-bold text-gray-800">Igreja Batista Regular da Graça</span>
+                    </a>
+                </div>
+
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a class='nav-item text-gray-700 px-3 py-2 font-medium' href='../index.html'>Início</a>
+
+                    <div class="relative group">
+                        <button class="nav-item text-gray-700 px-3 py-2 font-medium flex items-center">
+                            Sobre Nós
+                            <i class="fas fa-chevron-down ml-2 text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-1 group-hover:translate-y-0">
+                            <a href="../index.html#quem-somos" class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Quem Somos</a>
+                            <a href="historia.html" class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200 bg-[#F3E9D6]">Nossa História</a>
+                            <a href="../index.html#pastor" class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Nosso Pastor</a>
+                            <a href="nossa-fe.html" class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Nossa Fé</a>
+                        </div>
+                    </div>
+
+                    <a href="programacoes.html" class="nav-item text-gray-700 px-3 py-2 font-medium">Programações</a>
+
+                    <div class="relative group">
+                        <button class="nav-item text-gray-700 px-3 py-2 font-medium flex items-center">
+                            Missões
+                            <i class="fas fa-chevron-down ml-2 text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-1 group-hover:translate-y-0">
+                            <a class='block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200' href='missionarios.html'>Missionários</a>
+                            <a class='block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200' href='congregacoes.html'>Congregações</a>
+                        </div>
+                    </div>
+
+                    <a class='nav-item text-gray-700 px-3 py-2 font-medium' href='contato.html'>Contato</a>
+
+                    <a class='btn-primary px-6 py-2 rounded-md font-medium ml-2' href='contato.html#cnpj-section'>
+                        <i class="fas fa-heart mr-2"></i>Ofertar
+                    </a>
+                </div>
+
+                <!-- Botão Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 focus:outline-none p-2 rounded-md hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white shadow-lg">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a class='block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors' href='../index.html'>Início</a>
+
+                <div class="relative">
+                    <button id="mobile-dropdown-button-1" class="w-full flex justify-between items-center px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">
+                        <span>Sobre Nós</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+
+                    <div id="mobile-dropdown-1" class="hidden pl-4 mt-1 space-y-1">
+                        <a href="../index.html#quem-somos" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Quem Somos</a>
+                        <a href="historia.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Nossa História</a>
+                        <a href="../index.html#pastor" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Nosso Pastor</a>
+                        <a href="nossa-fe.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Nossa Fé</a>
+                    </div>
+                </div>
+
+                <a href="programacoes.html" class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Programações</a>
+
+                <div class="relative">
+                    <button id="mobile-dropdown-button-2" class="w-full flex justify-between items-center px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">
+                        <span>Missões</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+
+                    <div id="mobile-dropdown-2" class="hidden pl-4 mt-1 space-y-1">
+                        <a class='block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors' href='missionarios.html'>Missionários</a>
+                        <a class='block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors' href='congregacoes.html'>Congregações</a>
+                    </div>
+                </div>
+
+                <a class='block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors' href='contato.html'>Contato</a>
+
+                <a class='block w-full text-center btn-primary px-4 py-3 rounded-md font-medium mt-2' href='contato.html#cnpj-section'>
+                    <i class="fas fa-heart mr-2"></i>Ofertar
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Showcase -->
+    <section id="showcase" style="height: 70vh; min-height: 500px; display: flex; justify-content: center; align-items: center; text-align: center; background-position: center; background-repeat: no-repeat; background-size: cover; background-image: url('https://images.pexels.com/photos/8468465/pexels-photo-8468465.jpeg'); background-color: rgba(0, 0, 0, 0.6); background-blend-mode: overlay; position: relative;">
+        <div style="position: relative; z-index: 1;" class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">Nossa História</h1>
+            <p class="text-xl md:text-2xl lg:text-3xl text-white italic">"Lembrai-vos dos dias antigos, considerai os anos de todas as gerações."</p>
+            <p class="text-white mt-4 font-bold">Deuteronômio 32:7</p>
+
+            <div class="mt-6">
+                <a href="#historia" class="btn-primary inline-flex items-center px-8 py-3 text-lg rounded-full">
+                    Conheça nossa trajetória <i class="fas fa-arrow-down ml-2 animate-bounce"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introdução -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            <div class="inline-block bg-[#F3E9D6] rounded-full px-6 py-2 mb-6">
+                <span class="text-[#C2994D] font-semibold"><i class="fas fa-church mr-2"></i>Desde 1957</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Igreja Batista Regular da Graça</h2>
+            <p class="text-lg text-gray-600 leading-relaxed text-justify">
+                Situada na <strong class="text-[#C2994D]">Rua Belo Horizonte, 675 no bairro de Adrianópolis, Manaus – Amazonas</strong>, 
+                nossa igreja foi fundada no ano de <strong class="text-[#C2994D]">1957</strong> neste mesmo local onde está estabelecida até hoje, 
+                sendo um marco na história do trabalho batista regular no estado do Amazonas.
+            </p>
+        </div>
+    </section>
+
+    <!-- Seção Principal da História -->
+    <section id="historia" class="py-16 bg-gray-50 history-section">
+        <div class="container mx-auto px-6">
+            <!-- Primeiro Bloco: Missionários Wakefield -->
+            <div class="flex flex-col lg:flex-row gap-12 items-start mb-20">
+                <div class="flex-1">
+                    <div class="mb-6">
+                        <span class="timeline-year">1950</span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Os Missionários Pioneiros</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-justify">
+                        A história da Igreja Batista Regular da Graça é o fruto do trabalho evangelístico dos missionários ingleses 
+                        <strong class="text-[#C2994D]">RICHARD E VIRGINIA WAKEFIELD</strong> na década de 50, quando chegaram ao Amazonas 
+                        com o propósito de pregar o Evangelho, implantar igrejas e formar obreiros através da implantação do 
+                        <a href="https://www.sebram.com.br" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 hover:opacity-80 transition-opacity duration-300 group">
+                            <strong class="text-[#C2994D] group-hover:underline">SEBRAM - SEMINÁRIO BATISTA REGULAR DO AMAZONAS</strong>
+                            <i class="fas fa-external-link-alt text-[#C2994D] text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                        </a>
+                    </p>
+                    <p class="text-gray-600 leading-relaxed text-justify">
+                        O pastor Ricardo assumiu a diretoria do Seminário e, em cumprimento ao trabalho prático que o Seminário exigia, 
+                        os seminaristas saíam evangelizando nas ruas e becos existentes naquela época. Naqueles anos, as ruas eram de barro 
+                        e muito difíceis de transitar. A ladeira da Av. Paraíba era totalmente de barro e os seminaristas muitas vezes 
+                        escorregavam e caíam na lama ao descerem essa ladeira.
+                    </p>
+                </div>
+                <div class="flex-1 w-full">
+                    <div class="image-placeholder rounded-xl overflow-hidden shadow-lg">
+                        <!-- 👇 COLOQUE O CAMINHO DA SUA IMAGEM AQUI 👇 -->
+                        <img src="/img/historia/missionarios-wakefield.jpg" alt="Missionários Richard e Virginia Wakefield">
+                        <!-- ⬆️ COLOQUE O CAMINHO DA SUA IMAGEM AQUI ⬆️ -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Segundo Bloco: O Início da Igreja -->
+            <div class="flex flex-col lg:flex-row-reverse gap-12 items-start mb-20">
+                <div class="flex-1">
+                    <div class="mb-6">
+                        <span class="timeline-year">1957</span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">O Início da Igreja</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-justify">
+                        O trabalho continuava todas as semanas nos arredores do Seminário na Av. Paraíba até que chegaram às imediações 
+                        de onde hoje está estabelecida nossa igreja. Ali estabeleceram um <strong class="text-[#C2994D]">ponto de pregação em uma edificação precária de madeira e palha</strong>, 
+                        uma foto icônica que ainda existe para testemunhar esses primórdios.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed text-justify">
+                        Os seminaristas e a família do pastor Wakefield continuaram com o ponto de pregação. As pessoas foram chegando, 
+                        conhecendo o Evangelho, convertendo-se e passando a congregar-se nesse local. Com o tempo, foi colocada uma placa 
+                        da IGREJA BATISTA e foi estabelecida como uma Igreja Batista fundada pelo pastor Ricardo Wakefield.
+                    </p>
+                </div>
+                <div class="flex-1 w-full">
+                    <div class="image-placeholder rounded-xl overflow-hidden shadow-lg">
+                        <!-- 👇 COLOQUE O CAMINHO DA SUA IMAGEM AQUI 👇 -->
+                        <img src="/img/historia/primeira-edificacao.jpg" alt="Primeira edificação da igreja - Madeira e Palha">
+                        <!-- ⬆️ COLOQUE O CAMINHO DA SUA IMAGEM AQUI ⬆️ -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citação -->
+            <div class="quote-card rounded-xl p-8 my-12 max-w-3xl mx-auto">
+                <i class="fas fa-quote-left text-3xl text-[#C2994D] opacity-50 mb-4 block"></i>
+                <p class="text-gray-700 text-lg italic leading-relaxed">
+                    "Os seminaristas e a família do pastor Wakefield continuaram com o ponto de pregação, as pessoas foram chegando, 
+                    conhecendo o Evangelho, convertendo-se e passando a congregar-se nesse local."
+                </p>
+            </div>
+
+            <!-- Terceiro Bloco: Organização da Igreja -->
+            <div class="flex flex-col lg:flex-row gap-12 items-start mb-20">
+                <div class="flex-1">
+                    <div class="mb-6">
+                        <span class="timeline-year">1959</span>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Organização e Crescimento</h3>
+                    <p class="text-gray-600 leading-relaxed mb-4 text-justify">
+                        Alguns seminaristas assumiram a liderança, dentre eles o irmão <strong class="text-[#C2994D]">Josué Martins</strong>, 
+                        o saudoso pastor <strong class="text-[#C2994D]">Francisco Mendes</strong> e sua família, e outros que se revezavam.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed text-justify">
+                        A igreja foi sendo organizada aos poucos com classes de crianças, adolescentes, jovens, adultos. A 
+                        <strong class="text-[#C2994D]">Sociedade Feminina</strong> foi organizada dois anos depois, estando ativa até hoje, 
+                        sendo um testemunho da fidelidade das mulheres desta igreja ao longo de mais de seis décadas.
+                    </p>
+                </div>
+                <div class="flex-1 w-full">
+                    <div class="image-placeholder rounded-xl overflow-hidden shadow-lg">
+                        <!-- 👇 COLOQUE O CAMINHO DA SUA IMAGEM AQUI 👇 -->
+                        <img src="/img/historia/primeiros-membros.jpg" alt="Primeiros membros e líderes da igreja">
+                        <!-- ⬆️ COLOQUE O CAMINHO DA SUA IMAGEM AQUI ⬆️ -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Pastores -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4 section-title">Nossos Pastores</h2>
+            <p class="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                Homens de Deus que pastorearam este rebanho com dedicação e amor.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+                <!-- Pastor Marcos Trible -->
+                <div class="pastor-card-mini bg-gray-50 shadow-md">
+                    <div class="pastor-img-placeholder">
+                        <!-- 👇 COLOQUE O CAMINHO DA IMAGEM DO PASTOR MARCOS TRIBLE AQUI 👇 -->
+                        <img src="/img/historia/pastor-marcos-trible.jpg" alt="Pastor Marcos Trible">
+                        <!-- ⬆️ COLOQUE O CAMINHO DA SUA IMAGEM AQUI ⬆️ -->
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-lg text-gray-800">Pastor Marcos Trible</h4>
+                        <p class="text-[#C2994D] text-sm">e família</p>
+                        <p class="text-gray-500 text-sm mt-2">Ministério profícuo e muito abençoado</p>
+                    </div>
+                </div>
+
+                <!-- Pastor Jonas Xavier Pessoa -->
+                <div class="pastor-card-mini bg-gray-50 shadow-md">
+                    <div class="pastor-img-placeholder">
+                        <!-- 👇 COLOQUE O CAMINHO DA IMAGEM DO PASTOR JONAS AQUI 👇 -->
+                        <img src="/img/historia/pastor-jonas-xavier.jpg" alt="Pastor Jonas Xavier Pessoa">
+                        <!-- ⬆️ COLOQUE O CAMINHO DA SUA IMAGEM AQUI ⬆️ -->
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-lg text-gray-800">Pastor Jonas Xavier Pessoa</h4>
+                        <p class="text-[#C2994D] text-sm">e família</p>
+                        <p class="text-gray-500 text-sm mt-2">21 anos de ministério</p>
+                    </div>
+                </div>
+
+                <!-- Pastor José Wellington Cartaxo -->
+                <div class="pastor-card-mini bg-gray-50 shadow-md">
+                    <div class="pastor-img-placeholder">
+                        <!-- 👇 COLOQUE O CAMINHO DA IMAGEM DO PASTOR WELLINGTON AQUI 👇 -->
+                        <img src="/img/historia/pastor-wellington-cartaxo.jpg" alt="Pastor José Wellington Cartaxo">
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-lg text-gray-800">Pr. José Wellington Cartaxo</h4>
+                        <p class="text-[#C2994D] text-sm">e família</p>
+                        <p class="text-gray-500 text-sm mt-2">Desde 07/07/2007</p>
+                    </div>
+                </div>
+
+                <!-- Pastor Francisco Mendes (in memoriam) -->
+                <div class="pastor-card-mini bg-gray-50 shadow-md">
+                    <div class="pastor-img-placeholder">
+                        <!-- 👇 COLOQUE O CAMINHO DA IMAGEM DO PASTOR FRANCISCO AQUI 👇 -->
+                        <img src="/img/historia/pastor-francisco-mendes.jpg" alt="Pastor Francisco Mendes">
+                        <!-- ⬆️ COLOQUE O CAMINHO DA SUA IMAGEM AQUI ⬆️ -->
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-lg text-gray-800">Pastor Francisco Mendes</h4>
+                        <p class="text-[#C2994D] text-sm">in memoriam</p>
+                        <p class="text-gray-500 text-sm mt-2">Líder nos primórdios da igreja</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção do Pastor Atual -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center justify-center gap-10 max-w-5xl mx-auto">
+                <div class="w-full lg:w-auto">
+                    <div class="pastor-card w-80 mx-auto">
+                        <div class="pastor-image">
+                            <!-- 👇 ESTA IMAGEM JÁ EXISTE, MAS VOCÊ PODE SUBSTITUIR SE QUISER 👇 -->
+                            <img src="/img/pastor.jpg" alt="Pastor José Wellington Cartaxo" loading="lazy">
+                            <!-- ⬆️ SUBSTITUA O CAMINHO SE TIVER OUTRA FOTO ⬆️ -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex-1">
+                    <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Pastor José Wellington Cartaxo</h3>
+                    <p class="text-lg text-[#C2994D] font-medium mb-6 text-justify">Pastor titular desde 07 de julho de 2007</p>
+                    <p class="text-gray-600 mb-4 text-justify">
+                        Após a partida súbita do querido Pastor Jonas Xavier Pessoa no ano de 2005, a igreja aguardava em oração 
+                        por um novo pastor. No dia <strong class="text-[#C2994D]">07 de julho de 2007</strong>, tivemos o privilégio de receber 
+                        o nosso querido atual Pastor <strong class="text-[#C2994D]">José Wellington Cartaxo</strong> e sua família.
+                    </p>
+                    <p class="text-gray-600 text-justify">
+                        Sob sua liderança, a igreja tem continuado firme na missão de pregar somente a Cristo como fundamento da Fé 
+                        e viver pela Graça de Cristo. É casado com Rosa Cartaxo, com quem compartilha uma bela família, sendo pais 
+                        de três filhos: Natanael Cartaxo (casado com Thais Cartaxo), Rhaniel Cartaxo e Elizabete Cartaxo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusão -->
+    <section class="py-20 mission-section text-white">
+        <div class="container mx-auto px-6 text-center mission-content">
+            <i class="fas fa-hands-praying text-5xl mb-6 opacity-75"></i>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Uma História de Fé e Graça</h2>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
+                Que Deus continue abençoando ricamente esta Igreja que prega somente a Cristo como fundamento da Fé e vive pela Graça de Cristo.
+            </p>
+            <p class="text-lg mt-6 text-gray-300">
+                <i class="fas fa-feather-alt mr-2"></i> Por Elide Lima
+            </p>
+            <div class="mt-10 flex flex-wrap gap-4 justify-center">
+                <a href="../index.html" class="btn-outline border-white text-white hover:bg-white hover:text-[#C2994D] px-8 py-3 rounded-md font-medium inline-flex items-center" style="border: 2px solid white; transition: all 0.3s ease;">
+                    <i class="fas fa-home mr-2"></i>Voltar para Início
+                </a>
+                <a href="contato.html" class="btn-primary px-8 py-3 rounded-md font-medium inline-flex items-center">
+                    <i class="fas fa-envelope mr-2"></i>Entre em Contato
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-gray-700 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="/img/logo.png" alt="logo" class="h-20 mr-3">
+                        <span class="text-lg font-bold text-gray-800">Igreja Batista Regular da Graça</span>
+                    </div>
+                    <p class="text-gray-600">Pela graça sois salvos, mediante a fé. <span class="font-semibold italic">Efésios 2:8</span></p>
+                </div>
+                <div>
+                    <h6 class="font-semibold text-lg text-gray-800 mb-4">Links Rápidos</h6>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html#quem-somos" class="hover:text-[#C2994D] transition duration-300">Quem Somos</a></li>
+                        <li><a href="historia.html" class="hover:text-[#C2994D] transition duration-300">Nossa História</a></li>
+                        <li><a href="nossa-fe.html" class="hover:text-[#C2994D] transition duration-300">Nossa Fé</a></li>
+                        <li><a class='hover:text-[#C2994D] transition duration-300' href='programacoes.html'>Programações</a></li>
+                        <li><a class='hover:text-[#C2994D] transition duration-300' href='missionarios.html'>Missionários</a></li>
+                        <li><a class='hover:text-[#C2994D] transition duration-300' href='congregacoes.html'>Congregações</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold text-lg text-gray-800 mb-4">Contato</h6>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-[#C2994D]"></i>
+                            <a href="https://maps.app.goo.gl/49ebvr2c8xGz1hGT9" target="_blank" class="text-gray-700 hover:text-[#C2994D] transition duration-300">R. Belo Horizonte, 675 - Adrianópolis, Manaus - AM, 69057-060</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-[#C2994D]"></i>
+                            <a href="tel:(92) 99618-8161" class="text-gray-700 hover:text-[#C2994D] transition duration-300">(92) 99618-8161</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-[#C2994D]"></i>
+                            <a href="mailto:ibrgmanaus@gmail.com" class="text-gray-700 hover:text-[#C2994D] transition duration-300" target="_blank">ibrgmanaus@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold text-lg text-gray-800 mb-4">Redes Sociais</h6>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/ibrg_am/" target="_blank" class="text-gray-700 hover:text-[#C2994D] text-xl transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@igrejabatistaregulardagrac1279" target="_blank" class="text-gray-700 hover:text-[#C2994D] text-xl transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://wa.me/5592996188161" target="_blank" class="text-gray-700 hover:text-[#C2994D] text-xl transition duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <div class="mt-6">
+                        <a class='bg-[#C2994D] hover:bg-[#A67C36] text-white px-4 py-2 rounded-md font-medium transition duration-300 shadow-md inline-flex items-center' href='contato.html#cnpj-section'>
+                            <i class="fas fa-heart mr-2"></i>Ofertar
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-300 mt-8 pt-8 text-center text-gray-600">
+                <p>&copy; 2025 Igreja Batista Regular da Graça. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <div class="scroll-top-btn" id="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="/js/script.js"></script>
+    <script>
+        // Menu mobile toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+            });
+        }
+
+        // Dropdown mobile toggle - Sobre Nós
+        const mobileDropdownButton1 = document.getElementById('mobile-dropdown-button-1');
+        const mobileDropdown1 = document.getElementById('mobile-dropdown-1');
+        if (mobileDropdownButton1 && mobileDropdown1) {
+            const chevronIcon1 = mobileDropdownButton1.querySelector('i');
+            mobileDropdownButton1.addEventListener('click', () => {
+                mobileDropdown1.classList.toggle('hidden');
+                chevronIcon1.classList.toggle('rotate-180');
+            });
+        }
+
+        // Dropdown mobile toggle - Missões
+        const mobileDropdownButton2 = document.getElementById('mobile-dropdown-button-2');
+        const mobileDropdown2 = document.getElementById('mobile-dropdown-2');
+        if (mobileDropdownButton2 && mobileDropdown2) {
+            const chevronIcon2 = mobileDropdownButton2.querySelector('i');
+            mobileDropdownButton2.addEventListener('click', () => {
+                mobileDropdown2.classList.toggle('hidden');
+                chevronIcon2.classList.toggle('rotate-180');
+            });
+        }
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+        
+        if (scrollTopBtn) {
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

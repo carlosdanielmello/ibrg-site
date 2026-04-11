@@ -1,0 +1,36 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "img/uploads"
+public_folder: "/img/uploads"
+
+collections:
+  - name: "missionarios"
+    label: "Missionários"
+    folder: "content/missionarios"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nome", name: "name", widget: "string"}
+      - {label: "Descrição", name: "description", widget: "text"}
+      - {label: "Igreja", name: "church", widget: "string"}
+      - {label: "Localização", name: "location", widget: "string"}
+      - {label: "Cidade", name: "city", widget: "string"}
+      - {label: "Estado", name: "state", widget: "string"}
+      - {label: "País", name: "country", widget: "string"}
+      - {label: "Telefone", name: "phone", widget: "string"}
+      - {label: "Imagem", name: "image", widget: "image"}
+      - {label: "Vídeo (link YouTube)", name: "video", widget: "string", required: false}
+      - {label: "Relatório (PDF)", name: "report", widget: "file", required: false}
+
+  - name: "programacoes"
+    label: "Programações"
+    folder: "content/programacoes"
+    create: true
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "Dia da semana", name: "day", widget: "string"}
+      - {label: "Horário", name: "time", widget: "string"}
+      - {label: "Descrição", name: "description", widget: "text"}
+      - {label: "Imagem", name: "image", widget: "image"}

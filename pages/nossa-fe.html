@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Fé - IBRG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/pages.css">
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Navbar -->
+    <nav class="shadow-md sticky top-0 z-50 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex items-center hover:opacity-90 transition-opacity">
+                        <img src="/img/logo.png" alt="Logo IBRG" class="h-20 mr-3">
+                        <span class="text-lg md:text-xl font-bold text-gray-800">Igreja Batista Regular da Graça</span>
+                    </a>
+                </div>
+
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a class='nav-item text-gray-700 px-3 py-2 font-medium' href='../index.html'>Início</a>
+
+                    <div class="relative group">
+                        <button class="nav-item text-gray-700 px-3 py-2 font-medium flex items-center">
+                            Sobre Nós
+                            <i class="fas fa-chevron-down ml-2 text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-1 group-hover:translate-y-0">
+                            <a href="../index.html#quem-somos" class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Quem Somos</a>
+                            <a href="historia.html" class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Nossa História</a>
+                            <a href="../index.html#pastor" class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Nosso Pastor</a>
+                            <a href="nossa-fe.html" class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200 bg-[#F3E9D6]">Nossa Fé</a>
+                        </div>
+                    </div>
+
+                    <a href="programacoes.html" class="nav-item text-gray-700 px-3 py-2 font-medium">Programações</a>
+
+                    <div class="relative group">
+                        <button class="nav-item text-gray-700 px-3 py-2 font-medium flex items-center">
+                            Missões
+                            <i class="fas fa-chevron-down ml-2 text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-1 group-hover:translate-y-0">
+                            <a class='block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200' href='missionarios.html'>Missionários</a>
+                            <a class='block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200' href='congregacoes.html'>Congregações</a>
+                        </div>
+                    </div>
+
+                    <a class='nav-item text-gray-700 px-3 py-2 font-medium' href='contato.html'>Contato</a>
+
+                    <a class='btn-primary px-6 py-2 rounded-md font-medium ml-2' href='contato.html#cnpj-section'>
+                        <i class="fas fa-heart mr-2"></i>Ofertar
+                    </a>
+                </div>
+
+                <!-- Botão Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 focus:outline-none p-2 rounded-md hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white shadow-lg">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a class='block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors' href='../index.html'>Início</a>
+
+                <div class="relative">
+                    <button id="mobile-dropdown-button-1" class="w-full flex justify-between items-center px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">
+                        <span>Sobre Nós</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+
+                    <div id="mobile-dropdown-1" class="hidden pl-4 mt-1 space-y-1">
+                        <a href="../index.html#quem-somos" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Quem Somos</a>
+                        <a href="historia.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Nossa História</a>
+                        <a href="../index.html#pastor" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Nosso Pastor</a>
+                        <a href="nossa-fe.html" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Nossa Fé</a>
+                    </div>
+                </div>
+
+                <a href="programacoes.html" class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Programações</a>
+
+                <div class="relative">
+                    <button id="mobile-dropdown-button-2" class="w-full flex justify-between items-center px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">
+                        <span>Missões</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+
+                    <div id="mobile-dropdown-2" class="hidden pl-4 mt-1 space-y-1">
+                        <a class='block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors' href='missionarios.html'>Missionários</a>
+                        <a class='block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors' href='congregacoes.html'>Congregações</a>
+                    </div>
+                </div>
+
+                <a class='block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors' href='contato.html'>Contato</a>
+
+                <a class='block w-full text-center btn-primary px-4 py-3 rounded-md font-medium mt-2' href='contato.html#cnpj-section'>
+                    <i class="fas fa-heart mr-2"></i>Ofertar
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Showcase -->
+    <section id="showcase" class="showcase-faith">
+        <div id="showcase-container" class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Nossa Fé</h1>
+            <p id="verse" class="text-xl md:text-2xl lg:text-3xl">"Examinais as Escrituras, porque vós cuidais ter nelas a vida eterna, e são elas que de mim testificam."</p>
+            <span id="ref" class="mt-4">João 5:39</span>
+
+            <div class="mt-6">
+                <a href="#declaracao" class="btn-primary inline-flex items-center px-8 py-3 text-lg rounded-full">
+                    Ler Declaração <i class="fas fa-arrow-down ml-2 animate-bounce"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introdução -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6 max-w-4xl text-center">
+            <div class="inline-block bg-[#F3E9D6] rounded-full px-6 py-2 mb-6">
+                <span class="text-[#C2994D] font-semibold"><i class="fas fa-bible mr-2"></i>Fundamento Bíblico</span>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Nossa Declaração de Fé</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                A Igreja Batista Regular da Graça subscreve a <strong class="text-[#C2994D]">Palavra de Deus</strong> como única e suficiente regra de fé e prática. 
+                Nossas crenças estão fundamentadas nas Escrituras Sagradas do Antigo e Novo Testamentos, 
+                reconhecendo sua inspiração divina, infalibilidade e autoridade suprema sobre toda a vida cristã.
+            </p>
+            <div class="mt-8 p-6 bg-gray-50 rounded-xl border-l-4 border-[#C2994D]">
+                <p class="text-gray-700 italic">
+                    "A Regra de Fé Oficial da IBRG é a Palavra de Deus expressa na Bíblia Sagrada."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Declaração de Fé - Cards -->
+    <section id="declaracao" class="py-16 bg-gray-50 doctrine-section">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 section-title">O que Cremos</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Nossa doutrina é baseada nas verdades fundamentais da fé cristã, expressas nos seguintes artigos:</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-4">
+                <!-- Item 1 -->
+                <div class="faith-card bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="faith-number flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">1</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Inspiração das Escrituras</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Cremos nas Escrituras Sagradas do Velho e Novo Testamentos, como inspiradas verbalmente por Deus, infalíveis nos manuscritos originais e de autoridade suprema de fé e na vida 
+                                <span class="verse-highlight">(Salmo 68:11; II Timóteo 3:16,17; II Pedro 1:21)</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="faith-card bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="faith-number flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">2</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">A Trindade</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Cremos em um só Deus, existindo eternamente em três pessoas: Pai, Filho e Espírito Santo; iguais em poder e glória, executando ofícios distintos porém harmoniosos, na grande obra de redenção humana 
+                                <span class="verse-highlight">(Êxodo 20:1-3; Mateus 28:19; João 3:16; II Coríntios 13:13; I Pedro 1:18-20)</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="faith-card bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="faith-number flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">3</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">O Espírito Santo</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Cremos que o Espírito Santo é uma pessoa divina possuindo todos os atributos de personalidade e Deidade; é igual ao Pai e ao Filho e da mesma natureza 
+                                <span class="verse-highlight">(João 14:16,17,26; II Coríntios 13:13; Efésios 1:13,14; Hebreus 9:14)</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="faith-card bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="faith-number flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">4</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Jesus Cristo - Deus Encarnado</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Cremos que Jesus Cristo foi concebido por obra e graça do Espírito Santo, nasceu da virgem Maria, de modo sobrenatural; é Deus verdadeiro, sendo "Deus manifestado na carne" 
+                                <span class="verse-highlight">(Isaías 7:14; Mateus 1:18-25; Lucas 1:35; João 1:1; I Timóteo 2:5)</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="faith-card bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="faith-number flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">5</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Morte Substitutiva de Cristo</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Cremos que o Senhor Jesus Cristo morreu pelos nossos pecados segundo as Escrituras, como um sacrifício representativo 
+                                <span class="verse-highlight">(Isaías 53:4,5; I Coríntios 15:3; I Pedro 3:18)</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="faith-card bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="faith-number flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">6</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Ressurreição e Volta de Cristo</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Cremos na ressurreição corpórea de Jesus Cristo, na ascensão d'Ele ao céu, na Sua vida presente como nosso Sumo-sacerdote e na Sua Vinda iminente e pessoal, antes do seu reino terrestre e, antes da Grande Tribulação 
+                                <span class="verse-highlight">(Mateus 28:6; Lucas 24:39-43; Atos 1:11; 15:16; I Tessalonicenses 4:16; Hebreus 4:15)</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 7 -->
+                <div class="faith-card bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="faith-number flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">7</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">A Queda e o Pecado</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Cremos que o homem foi criado à imagem de Deus, que ele pecou, ficando, portanto, sujeito não somente à morte física, mas também à morte espiritual, que é a separação de Deus, e que todos os seres humanos nascem com uma natureza pecadora 
+                                <span class="verse-highlight">(Romanos 3:23; 5:12; Efésios 2:1)</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 8 -->
+                <div class="faith-card bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="faith-number flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">8</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Salvação pela Fé</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Cremos que todos os que recebem, por meio da fé, o Senhor Jesus Cristo, renascem do Espírito Santo, e se tornam, portanto, filhos de Deus 
+                                <span class="verse-highlight">(João 1:12; 3:3-6; 10:28; Atos 13:39)</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 9 -->
+                <div class="faith-card bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="faith-number flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">9</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">A Igreja - Corpo de Cristo</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Cremos que a Igreja invisível é o corpo e a noiva de Cristo 
+                                <span class="verse-highlight">(Mateus 16:15-19; I Coríntios 12:12-13; Efésios 1:22-23; 4:25-27,30,32; Filipenses 4:15-16)</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 10 -->
+                <div class="faith-card bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="faith-number flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">10</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">A Igreja Visível</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Cremos que a Igreja visível, de Cristo, é a comunidade de crentes associados por um pacto de fé e na comunhão mútua, segundo o Evangelho, com o propósito de observar as ordenanças e os ensinamentos de Cristo, e edificar seus membros 
+                                <span class="verse-highlight">(Atos 2:41-42; Tito 1)</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 11 -->
+                <div class="faith-card bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="faith-number flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">11</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Céu e Inferno</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Cremos na existência do céu e do inferno, na ressurreição corpórea dos justos e injustos; que os justos hão de comparecer diante do Tribunal de Cristo, depois do que entrarão no gozo da bem-aventurança eterna 
+                                <span class="verse-highlight">(Mateus 25:46; João 5:28,29; II Coríntios 5:10)</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 12 -->
+                <div class="faith-card bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="faith-number flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">12</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">O Juízo Final</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Cremos que os injustos hão de comparecer diante do Trono Branco de Deus, para serem lançados no suplício eterno 
+                                <span class="verse-highlight">(Mateus 25:46; João 5:28-29; Apocalipse 19:11-15)</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 13 -->
+                <div class="faith-card bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="faith-number flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">13</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Satanás</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Cremos que existe um ser pessoal chamado Satanás, o "deus deste século", "o príncipe da potestade do ar", cheio de toda a sutiliza e malícia, o qual procura incessantemente frustrar os propósitos de Deus e seduzir os filhos dos homens 
+                                <span class="verse-highlight">(II Coríntios 4:4; 11:13-15; Efésios 2:2; Apocalipse 12:9)</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 14 -->
+                <div class="faith-card bg-white rounded-lg p-6 shadow-md">
+                    <div class="flex items-start gap-4">
+                        <div class="faith-number flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white font-bold">14</div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800 mb-2">Ordenanças da Igreja</h3>
+                            <p class="text-gray-600 leading-relaxed">
+                                Cremos que as ordenanças bíblicas da Igreja são: o batismo e a Ceia do Senhor; que o batismo deve ser administrado somente aos crentes; que, da Ceia do Senhor devem participar somente os crentes batizados e que estejam em plena comunhão com Cristo e Sua Igreja 
+                                <span class="verse-highlight">(Mateus 26:26-29; Romanos 6:14)</span>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Versículo Final -->
+    <section class="py-20 bible-section text-white">
+        <div class="container mx-auto px-6 text-center mission-content">
+            <i class="fas fa-cross text-5xl mb-6 opacity-75"></i>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Fundados na Palavra</h2>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
+                "Toda a Escritura é inspirada por Deus e útil para o ensino, para a repreensão, para a correção, para a educação na justiça."
+            </p>
+            <p class="text-lg mt-4 text-gray-300">2 Timóteo 3:16</p>
+            <div class="mt-10">
+                <a href="../index.html" class="btn-outline border-white text-white hover:bg-white hover:text-[#C2994D] px-8 py-3 rounded-md font-medium inline-flex items-center">
+                    <i class="fas fa-home mr-2"></i>Voltar para Início
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-gray-700 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="/img/logo.png" alt="logo" class="h-20 mr-3">
+                        <span class="text-lg font-bold text-gray-800">Igreja Batista Regular da Graça</span>
+                    </div>
+                    <p class="text-gray-600">Pela graça sois salvos, mediante a fé. <span class="font-semibold italic">Efésios 2:8</span></p>
+                </div>
+                <div>
+                    <h6 class="font-semibold text-lg text-gray-800 mb-4">Links Rápidos</h6>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html#quem-somos" class="hover:text-[#C2994D] transition duration-300">Quem Somos</a></li>
+                        <li><a href="historia.html" class="hover:text-[#C2994D] transition duration-300">Nossa História</a></li>
+                        <li><a href="nossa-fe.html" class="hover:text-[#C2994D] transition duration-300">Nossa Fé</a></li>
+                        <li><a href="programacoes.html" class="hover:text-[#C2994D] transition duration-300">Programações</a></li>
+                        <li><a class='hover:text-[#C2994D] transition duration-300' href='missionarios.html'>Missionários</a></li>
+                        <li><a class='hover:text-[#C2994D] transition duration-300' href='congregacoes.html'>Congregações</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold text-lg text-gray-800 mb-4">Contato</h6>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-[#C2994D]"></i>
+                            <a href="https://maps.app.goo.gl/49ebvr2c8xGz1hGT9" target="_blank" class="text-gray-700 hover:text-[#C2994D] transition duration-300">R. Belo Horizonte, 675 - Adrianópolis, Manaus - AM, 69057-060</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-[#C2994D]"></i>
+                            <a href="tel:(92) 99618-8161" class="text-gray-700 hover:text-[#C2994D] transition duration-300">(92) 99618-8161</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-[#C2994D]"></i>
+                            <a href="mailto:ibrgmanaus@gmail.com" class="text-gray-700 hover:text-[#C2994D] transition duration-300" target="_blank">ibrgmanaus@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold text-lg text-gray-800 mb-4">Redes Sociais</h6>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/ibrg_am/" target="_blank" class="text-gray-700 hover:text-[#C2994D] text-xl transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@igrejabatistaregulardagrac1279" target="_blank" class="text-gray-700 hover:text-[#C2994D] text-xl transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://wa.me/5592996188161" target="_blank" class="text-gray-700 hover:text-[#C2994D] text-xl transition duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <div class="mt-6">
+                        <a class='bg-[#C2994D] hover:bg-[#A67C36] text-white px-4 py-2 rounded-md font-medium transition duration-300 shadow-md inline-flex items-center' href='/pages/contato.html#cnpj-section'>
+                            <i class="fas fa-heart mr-2"></i>Ofertar
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-300 mt-8 pt-8 text-center text-gray-600">
+                <p>&copy; 2025 Igreja Batista Regular da Graça. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <div class="scroll-top-btn" id="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="/js/script.js"></script>
+    <script>
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+
+</html>

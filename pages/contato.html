@@ -1,0 +1,499 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - IBRG</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/missionaries.css">
+    <link rel="stylesheet" href="/css/pages.css">
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Navbar -->
+    <nav class="shadow-md sticky top-0 z-50 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="../index.html" class="flex items-center hover:opacity-90 transition-opacity">
+                        <img src="/img/logo.png" alt="Logo IBRG" class="h-20 mr-3">
+                        <span class="text-lg md:text-xl font-bold text-gray-800">Igreja Batista Regular da Graça</span>
+                    </a>
+                </div>
+
+                <!-- Menu Desktop -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="../index.html" class="nav-item text-gray-700 px-3 py-2 font-medium">Início</a>
+
+                    <div class="relative group">
+                        <button class="nav-item text-gray-700 px-3 py-2 font-medium flex items-center">
+                            Sobre Nós
+                            <i
+                                class="fas fa-chevron-down ml-2 text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div
+                            class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-1 group-hover:translate-y-0">
+                            <a href="../index.html#quem-somos"
+                                class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Quem
+                                Somos</a>
+                            <a href="historia.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Nossa
+                                História</a>
+                            <a href="../index.html#pastor"
+                                class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Nosso
+                                Pastor</a>
+                            <a href="nossa-fe.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6] transition-colors duration-200">Nossa
+                                Fé</a>
+                        </div>
+                    </div>
+
+                    <a href="programacoes.html"
+                        class="nav-item text-gray-700 px-3 py-2 font-medium">Programações</a>
+
+                    <div class="relative group">
+                        <button class="nav-item text-gray-700 px-3 py-2 font-medium flex items-center">
+                            Missões
+                            <i
+                                class="fas fa-chevron-down ml-2 text-xs transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <div
+                            class="absolute left-0 mt-2 w-56 bg-white rounded-lg shadow-xl py-2 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform -translate-y-1 group-hover:translate-y-0">
+                            <a href="missionarios.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6]">Missionários</a>
+                            <a href="congregacoes.html"
+                                class="block px-4 py-2 text-gray-700 hover:bg-[#F3E9D6]">Congregações</a>
+                        </div>
+                    </div>
+
+                    <a href="contato.html" class="nav-item text-gray-700 px-3 py-2 font-medium">Contato</a>
+
+                    <a href="#cnpj-section" class="btn-primary px-6 py-2 rounded-md font-medium ml-2">
+                        <i class="fas fa-heart mr-2"></i>Ofertar
+                    </a>
+                </div>
+
+                <!-- Botão Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button"
+                        class="text-gray-700 focus:outline-none p-2 rounded-md hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="mobile-menu md:hidden bg-white shadow-lg">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="../index.html"
+                    class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Início</a>
+
+                <div class="relative">
+                    <button id="mobile-dropdown-button-1"
+                        class="w-full flex justify-between items-center px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">
+                        <span>Sobre Nós</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+
+                    <div id="mobile-dropdown-1" class="hidden pl-4 mt-1 space-y-1">
+                        <a href="../index.html#quem-somos"
+                            class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Quem
+                            Somos</a>
+                        <a href="historia.html"
+                            class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Nossa
+                            História</a>
+                        <a href="../index.html#pastor"
+                            class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Nosso
+                            Pastor</a>
+                        <a href="nossa-fe.html"
+                            class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Nossa
+                            Fé</a>
+                    </div>
+                </div>
+
+                <a href="programacoes.html"
+                    class="mobile-nav-link block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Programações</a>
+
+                <div class="relative">
+                    <button id="mobile-dropdown-button-2"
+                        class="w-full flex justify-between items-center px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">
+                        <span>Missões</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+
+                    <div id="mobile-dropdown-2" class="hidden pl-4 mt-1 space-y-1">
+                        <a href="missionarios.html"
+                            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Missionários</a>
+                        <a href="congregacoes.html"
+                            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Congregações</a>
+                    </div>
+                </div>
+
+                <a href="contato.html"
+                    class="block px-3 py-3 rounded-md text-base font-medium text-gray-700 hover:bg-[#F3E9D6] transition-colors">Contato</a>
+
+                <a href="#cnpj-section"
+                    class="block w-full text-center btn-primary px-4 py-3 rounded-md font-medium mt-2">
+                    <i class="fas fa-heart mr-2"></i>Ofertar
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Showcase -->
+    <section id="showcase" class="showcase-contact">
+        <div id="showcase-container" class="container mx-auto px-6">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Entre em Contato</h1>
+            <p id="verse" class="text-xl md:text-2xl lg:text-3xl">"Orai sem cessar."</p>
+            <span id="ref" class="mt-4">1 Tessalonicenses 5:17</span>
+
+            <div class="mt-6">
+                <a href="#contato" class="btn-primary inline-flex items-center px-8 py-3 text-lg rounded-full">
+                    Fale Conosco <i class="fas fa-arrow-down ml-2 animate-bounce"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato Section -->
+    <section id="contato" class="py-20 bg-white">
+        <div class="container mx-auto px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 section-title">Fale Conosco</h2>
+            <p class="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                Estamos sempre à disposição para responder suas dúvidas, ouvir suas sugestões e orar por você. Entre em
+                contato através de um dos nossos canais abaixo.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Card Endereço -->
+                <div class="contact-card bg-white p-8 text-center">
+                    <div class="contact-icon mx-auto">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">Endereço</h3>
+                    <p class="text-gray-600 mb-4">
+                        R. Belo Horizonte, 675 - Adrianópolis<br>
+                        Manaus - AM, 69057-060
+                    </p>
+                    <a href="https://maps.app.goo.gl/49ebvr2c8xGz1hGT9" target="_blank"
+                        class="btn-outline inline-block px-6 py-2 rounded-md font-medium">
+                        <i class="fas fa-directions mr-2"></i>Como chegar
+                    </a>
+                </div>
+
+                <!-- Card WhatsApp -->
+                <div class="contact-card bg-white p-8 text-center">
+                    <div class="contact-icon mx-auto">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">WhatsApp</h3>
+                    <p class="text-gray-600 mb-4">
+                        (92) 9961-88161<br>
+                        Envie-nos uma mensagem
+                    </p>
+                    <a href="https://wa.me/5592996188161" target="_blank"
+                        class="btn-outline inline-block px-6 py-2 rounded-md font-medium">
+                        <i class="fab fa-whatsapp mr-2"></i>Enviar Mensagem
+                    </a>
+                </div>
+
+                <!-- Card Email -->
+                <div class="contact-card bg-white p-8 text-center">
+                    <div class="contact-icon mx-auto">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-800">E-mail</h3>
+                    <p class="text-gray-600 mb-4">
+                        ibrgmanaus@gmail.com<br>
+                        Nosso E-mail
+                    </p>
+                    <a href="mailto:ibrgmanaus@gmail.com"
+                        class="btn-outline inline-block px-6 py-2 rounded-md font-medium">
+                        <i class="fas fa-paper-plane mr-2"></i>Enviar E-mail
+                    </a>
+                </div>
+            </div>
+
+            <!-- Mapa -->
+            <div class="max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold mb-6 text-gray-800 text-center">Nossa Localização</h3>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.960649635166!2d-60.010464025029044!3d-3.1051078968704577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c054b9b5fd1eb%3A0x2049796ad8878791!2sIgreja%20Batista%20Regular%20da%20Gra%C3%A7a!5e0!3m2!1spt-BR!2sbr!4v1751556606273!5m2!1spt-BR!2sbr"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cultos Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8 section-title">Nossos Cultos</h2>
+
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- EBD -->
+                <div
+                    class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="p-8 text-center">
+                        <div class="bg-[#F3E9D6] w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-book-bible text-[#C2994D] text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">EBD</h3>
+                        <p class="text-gray-600 mb-2">Escola Bíblica Dominical</p>
+                        <div class="flex items-center justify-center space-x-2 text-[#C2994D]">
+                            <i class="fas fa-calendar-day"></i>
+                            <span class="font-medium">Domingo</span>
+                        </div>
+                        <div class="flex items-center justify-center space-x-2 text-gray-700 mt-2">
+                            <i class="fas fa-clock"></i>
+                            <span class="font-medium">8h30</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Culto Noturno -->
+                <div
+                    class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="p-8 text-center">
+                        <div class="bg-[#F3E9D6] w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-church text-[#C2994D] text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Culto Noturno</h3>
+                        <p class="text-gray-600 mb-2">Culto de Louvor e Adoração</p>
+                        <div class="flex items-center justify-center space-x-2 text-[#C2994D]">
+                            <i class="fas fa-calendar-day"></i>
+                            <span class="font-medium">Domingo</span>
+                        </div>
+                        <div class="flex items-center justify-center space-x-2 text-gray-700 mt-2">
+                            <i class="fas fa-clock"></i>
+                            <span class="font-medium">18h</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Culto de Oração -->
+                <div
+                    class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="p-8 text-center">
+                        <div class="bg-[#F3E9D6] w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6">
+                            <i class="fas fa-hands-praying text-[#C2994D] text-3xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Culto de Oração</h3>
+                        <p class="text-gray-600 mb-2">Momento de Intercessão</p>
+                        <div class="flex items-center justify-center space-x-2 text-[#C2994D]">
+                            <i class="fas fa-calendar-day"></i>
+                            <span class="font-medium">Quarta-feira</span>
+                        </div>
+                        <div class="flex items-center justify-center space-x-2 text-gray-700 mt-2">
+                            <i class="fas fa-clock"></i>
+                            <span class="font-medium">19h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cnpj-section" class="py-20 bg-white">
+        <div class="container mx-auto px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto">
+                <div class="relative bg-gray-100 rounded-2xl p-10 md:p-12 text-center overflow-hidden shadow-md">
+                    <!-- Ornamentos decorativos -->
+                    <div class="absolute -top-12 -right-12 w-36 h-36 rounded-full bg-[#F3E9D6] opacity-20"></div>
+                    <div class="absolute -bottom-12 -left-12 w-36 h-36 rounded-full bg-[#F3E9D6] opacity-20"></div>
+
+                    <div class="relative z-10 space-y-6">
+                        <!-- Ícone -->
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#C2994D] text-white shadow">
+                            <i class="fas fa-hand-holding-usd text-2xl"></i>
+                        </div>
+
+                        <!-- Título e subtítulo -->
+                        <div>
+                            <h3 class="text-2xl md:text-3xl font-bold text-gray-800">Dados para Transferência/Depósito
+                            </h3>
+                            <p class="text-gray-600 mt-2">Faça sua oferta ou doação utilizando os dados abaixo</p>
+                        </div>
+
+                        <!-- Bloco de CNPJ -->
+                        <div class="bg-[#F3E9D6] rounded-xl p-6 md:p-8 space-y-4">
+                            <p class="text-gray-800 font-semibold text-lg">Igreja Batista Regular da Graça</p>
+
+                            <div
+                                class="relative bg-white border border-gray-200 rounded-lg p-4 text-lg font-mono font-semibold text-gray-800">
+                                <span id="cnpjText">04.433.447/0001-05</span>
+                                <button id="copyCNPJButton"
+                                    class="absolute top-1/2 right-3 transform -translate-y-1/2 px-3 py-1.5 text-sm bg-[#C2994D] text-white rounded-md hover:opacity-90 transition duration-300 flex items-center"
+                                    aria-label="Copiar CNPJ">
+                                    <i class="far fa-copy mr-1"></i> Copiar
+                                </button>
+                            </div>
+
+                            <div id="copySuccess"
+                                class="copy-success hidden text-sm text-green-600 font-medium flex items-center justify-center gap-2">
+                                <i class="fas fa-check-circle"></i> CNPJ copiado com sucesso!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('copyCNPJButton').addEventListener('click', function () {
+            navigator.clipboard.writeText('04.433.447/0001-05');
+            alert('CNPJ copiado para a área de transferência!');
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 text-gray-700 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <img src="/img/logo.png" alt="logo" class="h-20 mr-3">
+                        <span class="text-lg font-bold text-gray-800">Igreja Batista Regular da Graça</span>
+                    </div>
+                    <p class="text-gray-600">Pela graça sois salvos, mediante a fé. <span
+                            class="font-semibold italic">Efésios 2:8</span></p>
+                </div>
+                <div>
+                    <h6 class="font-semibold text-lg text-gray-800 mb-4">Links Rápidos</h6>
+                    <ul class="space-y-2">
+                        <li><a href="../index.html#quem-somos" class="hover:text-[#C2994D] transition duration-300">Quem Somos</a>
+                        </li>
+                        <li><a href="historia.html" class="hover:text-[#C2994D] transition duration-300">Nossa História</a>
+                        </li>
+                        <li><a href="nossa-fe.html" class="hover:text-[#C2994D] transition duration-300">Nossa Fé</a>
+                        </li>
+                        <li><a href="programacoes.html" class="hover:text-[#C2994D] transition duration-300">Programações</a></li>
+                        <li><a href="missionarios.html"
+                                class="hover:text-[#C2994D] transition duration-300">Missionários</a></li>
+                        <li><a href="congregacoes.html"
+                                class="hover:text-[#C2994D] transition duration-300">Congregações</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold text-lg text-gray-800 mb-4">Contato</h6>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 text-[#C2994D]"></i>
+                            <a href="https://maps.app.goo.gl/49ebvr2c8xGz1hGT9" target="_blank"
+                                class="text-gray-700 hover:text-[#C2994D] transition duration-300">R. Belo Horizonte,
+                                675 - Adrianópolis, Manaus - AM, 69057-060</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone mr-3 text-[#C2994D]"></i>
+                            <a href="tel:92996188161"
+                                class="text-gray-700 hover:text-[#C2994D] transition duration-300">(92) 99618-8161</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-[#C2994D]"></i>
+                            <a href="mailto:ibrgmanaus@gmail.com"
+                                class="text-gray-700 hover:text-[#C2994D] transition duration-300"
+                                target="_blank">ibrgmanaus@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-semibold text-lg text-gray-800 mb-4">Redes Sociais</h6>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/ibrg_am/" target="_blank"
+                            class="text-gray-700 hover:text-[#C2994D] text-xl transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@igrejabatistaregulardagrac1279" target="_blank"
+                            class="text-gray-700 hover:text-[#C2994D] text-xl transition duration-300">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://wa.me/5592996188161" target="_blank"
+                            class="text-gray-700 hover:text-[#C2994D] text-xl transition duration-300">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <div class="mt-6">
+                        <a href="#cnpj-section"
+                            class="bg-[#C2994D] hover:bg-[#A67C36] text-white px-4 py-2 rounded-md font-medium transition duration-300 shadow-md inline-flex items-center">
+                            <i class="fas fa-heart mr-2"></i>Ofertar
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-300 mt-8 pt-8 text-center text-gray-600">
+                <p>&copy; 2025 Igreja Batista Regular da Graça. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+
+        // Mobile Dropdown Toggles
+        const mobileDropdownButton1 = document.getElementById('mobile-dropdown-button-1');
+        const mobileDropdown1 = document.getElementById('mobile-dropdown-1');
+        const mobileDropdownButton2 = document.getElementById('mobile-dropdown-button-2');
+        const mobileDropdown2 = document.getElementById('mobile-dropdown-2');
+
+        mobileDropdownButton1.addEventListener('click', () => {
+            mobileDropdown1.classList.toggle('hidden');
+            mobileDropdownButton1.querySelector('i').classList.toggle('transform');
+            mobileDropdownButton1.querySelector('i').classList.toggle('rotate-180');
+        });
+
+        mobileDropdownButton2.addEventListener('click', () => {
+            mobileDropdown2.classList.toggle('hidden');
+            mobileDropdownButton2.querySelector('i').classList.toggle('transform');
+            mobileDropdownButton2.querySelector('i').classList.toggle('rotate-180');
+        });
+
+        // Copy CNPJ to clipboard
+
+        document.getElementById('copyCNPJButton').addEventListener('click', function () {
+            const cnpjText = document.getElementById('cnpjText').textContent;
+            navigator.clipboard.writeText(cnpjText).then(function () {
+                const successElement = document.getElementById('copySuccess');
+                successElement.classList.remove('hidden');
+                setTimeout(() => {
+                    successElement.classList.add('hidden');
+                }, 2000);
+            }).catch(function (err) {
+                console.error('Erro ao copiar CNPJ: ', err);
+            });
+        });
+
+        // Smooth scrolling para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
