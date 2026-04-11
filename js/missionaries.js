@@ -69,12 +69,8 @@ async function loadMissionariesFromJSON() {
         const data = await response.json();
         let missionaries = data.missionarios || [];
         
-        // Ordena por nome (ordem alfabética)
-        missionaries.sort((a, b) => {
-            const nomeA = a.name || '';
-            const nomeB = b.name || '';
-            return nomeA.localeCompare(nomeB);
-        });
+        // NÃO ORDENA MAIS - mantém a ordem definida no CMS
+        // O cliente pode arrastar os itens na ordem que quiser
         
         // Adiciona IDs e flags (automático)
         return missionaries.map((m, index) => ({
