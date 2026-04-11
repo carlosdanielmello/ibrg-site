@@ -1,0 +1,43 @@
+{
+  "missionarios": [
+    {
+      "name": "Pr. Amarildo Nunes",
+      "description": "O pastor Amarildo Nunes serve ao Senhor na Congregação Batista Regular da Graça, na cidade de Rio Preto da Eva, no estado do Amazonas. Ele é enviado pela Igreja Batista Regular da Graça.",
+      "church": "Congregação Batista Regular da Graça",
+      "location": "Rio Preto da Eva",
+      "city": "Rio Preto da Eva",
+      "state": "AM",
+      "country": "Brasil",
+      "phone": "(92) 99968-6404",
+      "image": "/img/missionarios/1.png",
+      "base": "Igreja Batista Regular da Graça",
+      "baseImg": "/img/info/logo.png"
+    },
+    {
+      "name": "Pr. André Carneiro da Rocha",
+      "description": "O pastor André Carneiro serve ao Senhor na Congregação Batista Regular de Antioquia, na cidade de Manaus, no estado do Amazonas. Ele é enviado pela Igreja Batista Regular da Graça.",
+      "church": "Congregação Batista Regular de Antioquia",
+      "location": "Manaus",
+      "city": "Manaus",
+      "state": "AM",
+      "country": "Brasil",
+      "phone": "(92) 99410-0718",
+      "image": "/img/missionarios/2.png",
+      "base": "Igreja Batista Regular da Graça",
+      "baseImg": "/img/info/logo.png"
+    },
+    {
+      "name": "Miss. Bento Sérgio Santana de Souza",
+      "description": "O missionário Bento Sérgio serve ao Senhor na Congregação Batista Regular Elim, na cidade de Cascavel, no estado do Ceará.",
+      "church": "Congregação Batista Regular Elim",
+      "location": "Cascavel",
+      "city": "Cascavel",
+      "state": "CE",
+      "country": "Brasil",
+      "phone": "(85) 99409-9694",
+      "image": "/img/missionarios/3.png",
+      "base": "Independente",
+      "baseImg": "/img/info/indi.png"
+    }
+  ]
+}
