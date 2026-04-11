@@ -56,22 +56,14 @@ const countryFlags = {
     "Venezuela": "/img/info/VEN.png",
     "Bolívia": "/img/info/BOL.png",
     "Portugal": "/img/info/PT.png",
-    "EUA": "/img/info/EUA.png"
+    "EUA": "/img/info/EUA.png",
+    "Outro": "/img/info/BR.png"
 };
 
-// Mapeamento de bandeiras por estado (automático)
-const stateFlags = {
-    "AC": "/img/info/AC.png", "AL": "/img/info/AL.png", "AP": "/img/info/AP.png",
-    "AM": "/img/info/AM.png", "BA": "/img/info/BA.png", "CE": "/img/info/CE.png",
-    "DF": "/img/info/DF.png", "ES": "/img/info/ES.png", "GO": "/img/info/GO.png",
-    "MA": "/img/info/MA.png", "MT": "/img/info/MT.png", "MS": "/img/info/MS.png",
-    "MG": "/img/info/MG.png", "PA": "/img/info/PA.png", "PB": "/img/info/PB.png",
-    "PR": "/img/info/PR.png", "PE": "/img/info/PE.png", "PI": "/img/info/PI.png",
-    "RJ": "/img/info/RJ.png", "RN": "/img/info/RN.png", "RS": "/img/info/RS.png",
-    "RO": "/img/info/RO.png", "RR": "/img/info/RR.png", "SC": "/img/info/SC.png",
-    "SP": "/img/info/SP.png", "SE": "/img/info/SE.png", "TO": "/img/info/TO.png"
-};
+// Bandeiras de estado removidas - apenas texto
+const stateFlags = {};
 
+// Função para carregar missionários do arquivo JSON
 async function loadMissionariesFromJSON() {
     try {
         const response = await fetch('/data/missionarios.json');
@@ -80,7 +72,7 @@ async function loadMissionariesFromJSON() {
         const data = await response.json();
         let missionaries = data.missionarios || [];
         
-        // Ordena por nome
+        // Ordena por nome (ordem alfabética)
         missionaries.sort((a, b) => {
             const nomeA = a.name || '';
             const nomeB = b.name || '';
@@ -96,7 +88,7 @@ async function loadMissionariesFromJSON() {
             location: m.location || '',
             city: m.city || '',
             state: m.state || '',
-            stateFlag: stateFlags[m.state] || '/img/info/AM.png',
+            stateFlag: '',  // SEM BANDEIRA, SÓ TEXTO
             country: m.country || 'Brasil',
             countryFlag: countryFlags[m.country] || '/img/info/BR.png',
             base: m.base || 'Igreja Batista Regular da Graça',
@@ -152,11 +144,11 @@ function displayMissionaries(missionariesToDisplay, page) {
                     <p class="text-gray-600 mb-4 line-clamp-4">${missionary.description}</p>
                     <div class="mb-2 space-y-1 mt-auto">
                         <div class="location-info flex items-center">
-                            <img src="${missionary.baseImg}" alt="Sede de ${missionary.base}" style="height:35px; margin-right:0.8rem;" />
+                            <img src="${missionary.baseImg}" alt="Sede de ${missionary.base}" style="height:35px; margin-right:0.8rem;" onerror="this.style.display='none'">
                             <span class="text-gray-700">${missionary.base}</span>
                         </div>
                         <div class="location-info flex items-center">
-                            <img src="${missionary.countryFlag}" alt="${missionary.country}" style="height:20px; margin-right:0.8rem;">
+                            <img src="${missionary.countryFlag}" alt="${missionary.country}" style="height:20px; margin-right:0.8rem;" onerror="this.style.display='none'">
                             <span class="text-gray-700">${missionary.city}, ${missionary.state}</span>
                         </div>
                     </div>
