@@ -10,7 +10,7 @@ collections:
     label: "Missionários"
     folder: "content/missionarios"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.name}}"
     fields:
       - {label: "Nome", name: "name", widget: "string"}
       - {label: "Descrição", name: "description", widget: "text"}
