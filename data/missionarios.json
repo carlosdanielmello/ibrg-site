@@ -50,6 +50,18 @@
       "country": "Brasil",
       "image": "/img/missionarios/3.png",
       "description": "O missionário Bento Sérgio serve ao Senhor na Congregação Batista Regular Elim, na cidade de Cascavel, no estado do Ceará."
+    },
+    {
+      "church": "asdasd",
+      "city": "Manaus",
+      "name": "asdasdas",
+      "phone": "23423423412344",
+      "state": "RJ",
+      "base": "Independente",
+      "location": "asdasd",
+      "country": "Portugal",
+      "image": "/img/uploads/img_7180.jpg",
+      "description": "dasdasd"
     }
   ]
 }
