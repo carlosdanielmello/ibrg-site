@@ -66,6 +66,19 @@
       "country": "Brasil",
       "image": "/img/uploads/25.png",
       "description": "asdasd asdas asdasddddddddddd\\adda\nsdadasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasas\nasd\ndsaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    {
+      "church": "asdasda",
+      "city": "asd",
+      "name": "ABA",
+      "phone": "24234",
+      "state": "MG",
+      "base": "Novas Tribos",
+      "baseImg": "/img/uploads/logo.png",
+      "location": "asdasd",
+      "country": "EUA",
+      "image": "/img/uploads/whatsapp-image-2026-01-24-at-22.17.49.jpeg",
+      "description": "asdasdasd"
     }
   ]
 }
