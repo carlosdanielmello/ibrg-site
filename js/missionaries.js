@@ -39,14 +39,20 @@ let currentPage = 1;
 const missionariesPerPage = 6;
 let filteredMissionaries = [];
 
-// Função para carregar missionários do arquivo JSON
 async function loadMissionariesFromJSON() {
     try {
         const response = await fetch('/data/missionarios.json');
         if (!response.ok) throw new Error('Erro ao carregar missionários');
         
         const data = await response.json();
-        const missionaries = data.missionarios || [];
+        let missionaries = data.missionarios || [];
+        
+        // ORDENA POR NOME (ORDEM ALFABÉTICA)
+        missionaries.sort((a, b) => {
+            const nomeA = a.name || '';
+            const nomeB = b.name || '';
+            return nomeA.localeCompare(nomeB);
+        });
         
         // Adiciona IDs e flags para cada missionário
         return missionaries.map((m, index) => ({
