@@ -49,6 +49,18 @@
       "country": "asdasd",
       "image": "/img/uploads/29.png",
       "description": "T4esteasfasfasdf"
+    },
+    {
+      "church": "asdasdasd",
+      "city": "asdasd",
+      "name": "Alberto Carlos",
+      "phone": "2323",
+      "state": "asdasd",
+      "base": "2342424",
+      "location": "asdas",
+      "country": "Brasil ",
+      "image": "/img/uploads/6.png",
+      "description": "asdasd"
     }
   ]
 }
