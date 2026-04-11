@@ -24,47 +24,15 @@ collections:
               - {label: "Igreja", name: "church", widget: "string"}
               - {label: "Localização (comunidade ou cidade)", name: "location", widget: "string"}
               - {label: "Cidade", name: "city", widget: "string"}
-              
-              - label: "Estado (UF)"
-                name: "state"
-                widget: "string"
-                hint: "Exemplo: AM, SP, RJ, ou escreva o estado completo"
-              
-              - label: "País"
-                name: "country"
-                widget: "select"
-                options:
-                  - {label: "Brasil", value: "Brasil"}
-                  - {label: "Venezuela", value: "Venezuela"}
-                  - {label: "Bolívia", value: "Bolívia"}
-                  - {label: "Portugal", value: "Portugal"}
-                  - {label: "Estados Unidos", value: "EUA"}
-                  - {label: "Outro", value: "Outro"}
-              
+              - {label: "Estado (UF)", name: "state", widget: "string", hint: "Exemplo: AM, SP, RJ, ou escreva o estado completo"}
+              - {label: "País", name: "country", widget: "select", options: [{label: "Brasil", value: "Brasil"}, {label: "Venezuela", value: "Venezuela"}, {label: "Bolívia", value: "Bolívia"}, {label: "Portugal", value: "Portugal"}, {label: "Estados Unidos", value: "EUA"}, {label: "Outro", value: "Outro"}]}
               - {label: "Telefone/WhatsApp", name: "phone", widget: "string", required: false}
               - {label: "Imagem do Missionário", name: "image", widget: "image", required: false}
-              
-              - label: "Agência Base"
-                name: "base"
-                widget: "select"
-                default: "Igreja Batista Regular da Graça"
-                options:
-                  - {label: "Igreja Batista Regular da Graça (logo padrão)", value: "Igreja Batista Regular da Graça"}
-                  - {label: "Paulo de Tarso", value: "Paulo de Tarso"}
-                  - {label: "MAB", value: "MAB"}
-                  - {label: "MBBF", value: "MBBF"}
-                  - {label: "Maranata", value: "Maranata"}
-                  - {label: "Novas Tribos", value: "Novas Tribos"}
-                  - {label: "Independente (sem logo)", value: "Independente"}
+              - {label: "Agência Base", name: "base", widget: "select", default: "Igreja Batista Regular da Graça", options: [{label: "Igreja Batista Regular da Graça", value: "Igreja Batista Regular da Graça"}, {label: "Paulo de Tarso", value: "Paulo de Tarso"}, {label: "MAB", value: "MAB"}, {label: "MBBF", value: "MBBF"}, {label: "Maranata", value: "Maranata"}, {label: "Novas Tribos", value: "Novas Tribos"}, {label: "Independente", value: "Independente"}]}
+              - {label: "Logo da Agência", name: "baseImg", widget: "image", required: false}
 
-  - name: "programacoes"
-    label: "Programações"
-    label_singular: "Programação"
-    folder: "data"
-    create: true
-    files:
-      - name: "atividades"
-        label: "Atividades da Igreja"
+      - name: "programacoes"
+        label: "Programações"
         file: "data/programacoes.json"
         description: "Lista de programações e atividades da igreja"
         fields:
