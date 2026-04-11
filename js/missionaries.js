@@ -60,9 +60,6 @@ const countryFlags = {
     "Outro": "/img/info/BR.png"
 };
 
-// Bandeiras de estado removidas - apenas texto
-const stateFlags = {};
-
 // Função para carregar missionários do arquivo JSON
 async function loadMissionariesFromJSON() {
     try {
@@ -88,7 +85,6 @@ async function loadMissionariesFromJSON() {
             location: m.location || '',
             city: m.city || '',
             state: m.state || '',
-            stateFlag: '',  // SEM BANDEIRA, SÓ TEXTO
             country: m.country || 'Brasil',
             countryFlag: countryFlags[m.country] || '/img/info/BR.png',
             base: m.base || 'Igreja Batista Regular da Graça',
@@ -149,7 +145,7 @@ function displayMissionaries(missionariesToDisplay, page) {
                         </div>
                         <div class="location-info flex items-center">
                             <img src="${missionary.countryFlag}" alt="${missionary.country}" style="height:20px; margin-right:0.8rem;" onerror="this.style.display='none'">
-                            <span class="text-gray-700">${missionary.city}, ${missionary.state}</span>
+                            <span class="text-gray-700">${missionary.city} - ${missionary.state}</span>
                         </div>
                     </div>
                     <div class="mt-auto">
@@ -305,7 +301,6 @@ window.openMissionaryDetails = function(missionaryId) {
         document.getElementById('missionaryDetailsBaseImg').src = missionary.baseImg;
         document.getElementById('missionaryDetailsCity').textContent = missionary.city;
         document.getElementById('missionaryDetailsState').textContent = missionary.state;
-        document.getElementById('missionaryDetailsStateFlag').src = missionary.stateFlag;
         document.getElementById('missionaryDetailsCountry').textContent = missionary.country;
         document.getElementById('missionaryDetailsCountryFlag').src = missionary.countryFlag;
         document.getElementById('missionaryDetailsLocation').textContent = missionary.location;
