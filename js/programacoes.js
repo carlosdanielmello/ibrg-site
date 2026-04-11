@@ -3,10 +3,21 @@ let allProgramacoes = [];
 
 async function loadProgramacoes() {
     try {
-        const response = await fetch('/data/programacoes.json');
-        if (!response.ok) throw new Error('Erro ao carregar programações');
+        // Tenta caminhos diferentes para garantir que encontra o arquivo
+        let response = await fetch('/data/programacoes.json');
+        
+        // Se não encontrar na raiz, tenta caminho relativo
+        if (!response.ok) {
+            response = await fetch('data/programacoes.json');
+        }
+        
+        if (!response.ok) {
+            throw new Error('Arquivo programacoes.json não encontrado');
+        }
         
         const data = await response.json();
+        console.log('Programações carregadas:', data); // Para debug
+        
         allProgramacoes = data.programacoes || [];
         
         // Ordenar por dia da semana
@@ -29,11 +40,15 @@ async function loadProgramacoes() {
         
     } catch (error) {
         console.error('Erro ao carregar programações:', error);
-        document.getElementById('programacoesContainer').innerHTML = `
-            <div class="text-center py-12 col-span-full">
-                <i class="fas fa-exclamation-triangle text-4xl text-red-500"></i>
-                <p class="text-gray-500 mt-4">Erro ao carregar programações. Tente novamente mais tarde.</p>
-            </div>`;
+        const container = document.getElementById('programacoesContainer');
+        if (container) {
+            container.innerHTML = `
+                <div class="text-center py-12 col-span-full">
+                    <i class="fas fa-exclamation-triangle text-4xl text-red-500"></i>
+                    <p class="text-gray-500 mt-4">Erro ao carregar programações. Tente novamente mais tarde.</p>
+                    <p class="text-gray-400 text-sm mt-2">Detalhe: ${error.message}</p>
+                </div>`;
+        }
     }
 }
 
