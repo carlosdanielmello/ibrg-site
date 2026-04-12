@@ -1,18 +1,6 @@
 {
   "missionarios": [
     {
-      "church": "Igreja Batista Regular",
-      "city": "Manaus",
-      "name": "asdasd",
-      "phone": "2314434341",
-      "state": "AM",
-      "base": "Independente",
-      "location": "Riberinho",
-      "country": "Outro",
-      "image": "/img/uploads/img-20250726-wa0146.jpg",
-      "description": "asdasd"
-    },
-    {
       "countryFlag": "/img/info/BR.png",
       "church": "Congregação Batista Regular da Graça",
       "city": "Rio Preto da Eva",
