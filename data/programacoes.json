@@ -48,6 +48,13 @@
       "horario": "19h",
       "descricao": "Culto ao Senhor realizado na casa dos irmãos da igreja, com o intuito de adoração ao Senhor e testemunho cristão aos parentes e vizinhos não-convertidos.",
       "imagem": "/img/programacoes/culto-lar.jpg"
+    },
+    {
+      "titulo": "Culto Evangelístico ",
+      "dia": "Quarta-feira",
+      "horario": "10h00",
+      "descricao": "234242",
+      "imagem": "/img/uploads/img-20250726-wa0146.jpg"
     }
   ]
 }
