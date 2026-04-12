@@ -48,6 +48,13 @@
       "horario": "19h",
       "descricao": "Culto ao Senhor realizado na casa dos irmãos da igreja, com o intuito de adoração ao Senhor e testemunho cristão aos parentes e vizinhos não-convertidos.",
       "imagem": "/img/programacoes/culto-lar.jpg"
+    },
+    {
+      "titulo": "asdasd",
+      "dia": "Terça-Feira",
+      "horario": "20:20",
+      "descricao": "asdasd",
+      "imagem": "/img/uploads/img_1097.jpg"
     }
   ]
 }
