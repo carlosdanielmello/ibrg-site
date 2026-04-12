@@ -72,5 +72,4 @@ collections:
               - {label: "Localização", name: "localizacao", widget: "string", hint: "Exemplo: Manaus/AM"}
               - {label: "Descrição", name: "descricao", widget: "text"}
               - {label: "Imagem da Congregação", name: "imagem", widget: "image", required: false}
-              - {label: "Link para Google Maps (Como chegar)", name: "directionsUrl", widget: "string", required: false}
               - {label: "WhatsApp/Contato (número apenas)", name: "contactUrl", widget: "string", required: false, hint: "Exemplo: 5592999999999"}
