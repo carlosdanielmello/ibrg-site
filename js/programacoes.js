@@ -87,35 +87,16 @@ function renderProgramacoes() {
                     <span class="program-day"><i class="fas fa-calendar-day mr-2"></i> ${prog.dia}</span>
                     <span class="program-time"><i class="fas fa-clock mr-2"></i> ${prog.horario}</span>
                 </div>
-                <h3 class="program-title">${prog.titulo}</h3>
-                <div class="description-wrapper" data-id="${index}">
+                <h3 class="program-title">${escapeHtml(prog.titulo)}</h3>
+                <div class="description-wrapper">
                     <p class="program-description" id="desc-${index}">${escapeHtml(prog.descricao)}</p>
-                    <button class="read-more-btn" data-id="${index}" style="display: none;">
+                    <button class="read-more-btn" data-id="${index}">
                         <i class="fas fa-chevron-down"></i> Ler mais
                     </button>
                 </div>
             </div>
         </div>
     `).join('');
-    
-    // Verifica cada descrição e mostra o botão se necessário
-    document.querySelectorAll('.program-description').forEach((desc, idx) => {
-        const btn = document.querySelector(`.read-more-btn[data-id="${idx}"]`);
-        if (btn) {
-            // Verifica se o texto tem mais de 4 linhas (usando altura real)
-            const lineHeight = parseInt(getComputedStyle(desc).lineHeight);
-            const maxHeight = lineHeight * 4;
-            
-            // Temporariamente remove o clamp para medir a altura real
-            desc.style.webkitLineClamp = 'unset';
-            const fullHeight = desc.scrollHeight;
-            desc.style.webkitLineClamp = '4';
-            
-            if (fullHeight > maxHeight + 5) {
-                btn.style.display = 'inline-flex';
-            }
-        }
-    });
     
     // Adiciona eventos de "Ler mais" para todos os botões
     document.querySelectorAll('.read-more-btn').forEach(btn => {
