@@ -3,10 +3,8 @@ let allProgramacoes = [];
 
 async function loadProgramacoes() {
     try {
-        // Tenta caminhos diferentes para garantir que encontra o arquivo
         let response = await fetch('/data/programacoes.json');
         
-        // Se não encontrar na raiz, tenta caminho relativo
         if (!response.ok) {
             response = await fetch('../data/programacoes.json');
         }
@@ -31,31 +29,22 @@ async function loadProgramacoes() {
             "Sábado": 7
         };
         
-        // Função para converter horário (ex: "8h30" ou "19h") para número comparável
         function horarioToNumber(horario) {
             let h = horario.replace('h', ':').replace('h30', ':30');
             let partes = h.split(':');
             let hora = parseInt(partes[0]);
             let minuto = partes[1] ? parseInt(partes[1]) : 0;
-            
             if (isNaN(minuto)) minuto = 0;
-            
             return hora * 60 + minuto;
         }
         
         allProgramacoes.sort((a, b) => {
-            // Primeiro ordena por dia
             const diaA = ordemDias[a.dia] || 99;
             const diaB = ordemDias[b.dia] || 99;
+            if (diaA !== diaB) return diaA - diaB;
             
-            if (diaA !== diaB) {
-                return diaA - diaB;
-            }
-            
-            // Se mesmo dia, ordena por horário
             const horarioA = horarioToNumber(a.horario);
             const horarioB = horarioToNumber(b.horario);
-            
             return horarioA - horarioB;
         });
         
@@ -88,7 +77,7 @@ function renderProgramacoes() {
         return;
     }
     
-    container.innerHTML = allProgramacoes.map(prog => `
+    container.innerHTML = allProgramacoes.map((prog, index) => `
         <div class="program-card bg-white">
             <div class="program-image">
                 <img src="${prog.imagem || '/img/atividades/default.jpg'}" alt="${prog.titulo}" onerror="this.src='/img/atividades/default.jpg'">
@@ -99,10 +88,35 @@ function renderProgramacoes() {
                     <span class="program-time"><i class="fas fa-clock mr-2"></i> ${prog.horario}</span>
                 </div>
                 <h3 class="program-title">${prog.titulo}</h3>
-                <p class="program-description">${prog.descricao}</p>
+                <div class="description-wrapper" data-id="${index}">
+                    <p class="program-description" id="desc-${index}">${prog.descricao}</p>
+                    <button class="read-more-btn" data-id="${index}">
+                        <i class="fas fa-chevron-down"></i> Ler mais
+                    </button>
+                </div>
             </div>
         </div>
     `).join('');
+    
+    // Adiciona eventos de "Ler mais" para todos os botões
+    document.querySelectorAll('.read-more-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const id = this.getAttribute('data-id');
+            const desc = document.getElementById(`desc-${id}`);
+            const isExpanded = desc.classList.contains('expanded');
+            
+            if (isExpanded) {
+                desc.classList.remove('expanded');
+                desc.style.webkitLineClamp = '4';
+                this.innerHTML = '<i class="fas fa-chevron-down"></i> Ler mais';
+            } else {
+                desc.classList.add('expanded');
+                desc.style.webkitLineClamp = 'unset';
+                this.innerHTML = '<i class="fas fa-chevron-up"></i> Ler menos';
+            }
+        });
+    });
 }
 
 function renderSchedule() {
@@ -114,7 +128,6 @@ function renderSchedule() {
         return;
     }
     
-    // Agrupar por dia (na ordem correta)
     const dias = {
         "Domingo": [],
         "Segunda-feira": [],
