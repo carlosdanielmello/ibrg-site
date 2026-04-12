@@ -20,20 +20,8 @@ async function loadProgramacoes() {
         
         allProgramacoes = data.programacoes || [];
         
-        // Ordenar por dia da semana
-        const ordemDias = {
-            "Segunda-feira": 1,
-            "Terça-feira": 2,
-            "Quarta-feira": 3,
-            "Quinta-feira": 4,
-            "Sexta-feira": 5,
-            "Sábado": 6,
-            "Domingo": 7
-        };
-        
-        allProgramacoes.sort((a, b) => {
-            return (ordemDias[a.dia] || 99) - (ordemDias[b.dia] || 99);
-        });
+        // NÃO ORDENA MAIS - mantém a ordem definida no CMS
+        // O cliente pode arrastar os itens na ordem que quiser
         
         renderProgramacoes();
         renderSchedule();
