@@ -123,13 +123,11 @@ function openCongregationModal(congregation) {
     document.getElementById('modalCongregationImage').alt = congregation.nome;
     document.getElementById('modalCongregationDescription').textContent = congregation.descricao;
 
+    // Botão Como chegar (Google Maps ou link de localização)
     const directionsLink = document.getElementById('modalDirectionsLink');
-    const contactLink = document.getElementById('modalContactLink');
     const newDirectionsLink = directionsLink.cloneNode(true);
-    const newContactLink = contactLink.cloneNode(true);
     directionsLink.replaceWith(newDirectionsLink);
-    contactLink.replaceWith(newContactLink);
-
+    
     newDirectionsLink.addEventListener('click', (e) => {
         e.stopPropagation();
         if (congregation.directionsUrl) {
@@ -138,6 +136,11 @@ function openCongregationModal(congregation) {
         hideCongregationModal();
     });
 
+    // Botão Contato (WhatsApp)
+    const contactLink = document.getElementById('modalContactLink');
+    const newContactLink = contactLink.cloneNode(true);
+    contactLink.replaceWith(newContactLink);
+    
     newContactLink.addEventListener('click', (e) => {
         e.stopPropagation();
         if (congregation.contactUrl) {
