@@ -57,7 +57,7 @@ collections:
               - {label: "Descrição", name: "descricao", widget: "text"}
               - {label: "Imagem ilustrativa", name: "imagem", widget: "image", required: false}
 
-                    - name: "congregacoes"
+      - name: "congregacoes"
         label: "Congregações"
         file: "data/congregacoes.json"
         description: "Lista de congregações da igreja"
