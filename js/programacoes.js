@@ -77,7 +77,7 @@ function renderProgramacoes() {
         return;
     }
     
-    container.innerHTML = allProgramacoes.map((prog, index) => `
+    container.innerHTML = allProgramacoes.map(prog => `
         <div class="program-card bg-white">
             <div class="program-image">
                 <img src="${prog.imagem || '/img/atividades/default.jpg'}" alt="${prog.titulo}" onerror="this.src='/img/atividades/default.jpg'">
@@ -87,44 +87,11 @@ function renderProgramacoes() {
                     <span class="program-day"><i class="fas fa-calendar-day mr-2"></i> ${prog.dia}</span>
                     <span class="program-time"><i class="fas fa-clock mr-2"></i> ${prog.horario}</span>
                 </div>
-                <h3 class="program-title">${escapeHtml(prog.titulo)}</h3>
-                <div class="description-wrapper">
-                    <p class="program-description" id="desc-${index}">${escapeHtml(prog.descricao)}</p>
-                    <button class="read-more-btn" data-id="${index}">
-                        <i class="fas fa-chevron-down"></i> Ler mais
-                    </button>
-                </div>
+                <h3 class="program-title">${prog.titulo}</h3>
+                <p class="program-description">${prog.descricao}</p>
             </div>
         </div>
     `).join('');
-    
-    // Adiciona eventos de "Ler mais" para todos os botões
-    document.querySelectorAll('.read-more-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const id = this.getAttribute('data-id');
-            const desc = document.getElementById(`desc-${id}`);
-            const isExpanded = desc.classList.contains('expanded');
-            
-            if (isExpanded) {
-                desc.classList.remove('expanded');
-                desc.style.webkitLineClamp = '4';
-                this.innerHTML = '<i class="fas fa-chevron-down"></i> Ler mais';
-            } else {
-                desc.classList.add('expanded');
-                desc.style.webkitLineClamp = 'unset';
-                this.innerHTML = '<i class="fas fa-chevron-up"></i> Ler menos';
-            }
-        });
-    });
-}
-
-// Função para escapar HTML e evitar injeção de código
-function escapeHtml(text) {
-    if (!text) return '';
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
 }
 
 function renderSchedule() {
@@ -176,7 +143,7 @@ function renderSchedule() {
                             <span class="schedule-time"><i class="fas fa-clock mr-1 text-gray-400"></i>${prog.horario}</span>
                         </div>
                         <div class="flex-1">
-                            <span class="schedule-title font-semibold text-gray-800 text-base sm:text-lg">${escapeHtml(prog.titulo)}</span>
+                            <span class="schedule-title font-semibold text-gray-800 text-base sm:text-lg">${prog.titulo}</span>
                         </div>
                         <i class="fas fa-chevron-right text-gray-400 hidden sm:block"></i>
                     </div>

@@ -463,38 +463,10 @@
     background-blend-mode: overlay;
 }
 
-/* Ler mais / Ler menos */
 .program-description {
     color: #6b7280;
     line-height: 1.7;
     text-align: justify;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-}
-
-.program-description.expanded {
-    display: block;
-}
-
-.read-more-btn {
-    background: none;
-    border: none;
-    color: #C2994D;
-    font-weight: 600;
-    font-size: 0.85rem;
-    margin-top: 0.75rem;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: all 0.3s ease;
-}
-
-.read-more-btn:hover {
-    color: #A67C36;
-    gap: 0.75rem;
 }
 
 @media (max-width: 640px) {
