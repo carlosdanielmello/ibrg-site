@@ -89,14 +89,33 @@ function renderProgramacoes() {
                 </div>
                 <h3 class="program-title">${prog.titulo}</h3>
                 <div class="description-wrapper" data-id="${index}">
-                    <p class="program-description" id="desc-${index}">${prog.descricao}</p>
-                    <button class="read-more-btn" data-id="${index}">
+                    <p class="program-description" id="desc-${index}">${escapeHtml(prog.descricao)}</p>
+                    <button class="read-more-btn" data-id="${index}" style="display: none;">
                         <i class="fas fa-chevron-down"></i> Ler mais
                     </button>
                 </div>
             </div>
         </div>
     `).join('');
+    
+    // Verifica cada descrição e mostra o botão se necessário
+    document.querySelectorAll('.program-description').forEach((desc, idx) => {
+        const btn = document.querySelector(`.read-more-btn[data-id="${idx}"]`);
+        if (btn) {
+            // Verifica se o texto tem mais de 4 linhas (usando altura real)
+            const lineHeight = parseInt(getComputedStyle(desc).lineHeight);
+            const maxHeight = lineHeight * 4;
+            
+            // Temporariamente remove o clamp para medir a altura real
+            desc.style.webkitLineClamp = 'unset';
+            const fullHeight = desc.scrollHeight;
+            desc.style.webkitLineClamp = '4';
+            
+            if (fullHeight > maxHeight + 5) {
+                btn.style.display = 'inline-flex';
+            }
+        }
+    });
     
     // Adiciona eventos de "Ler mais" para todos os botões
     document.querySelectorAll('.read-more-btn').forEach(btn => {
@@ -117,6 +136,14 @@ function renderProgramacoes() {
             }
         });
     });
+}
+
+// Função para escapar HTML e evitar injeção de código
+function escapeHtml(text) {
+    if (!text) return '';
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
 }
 
 function renderSchedule() {
@@ -168,7 +195,7 @@ function renderSchedule() {
                             <span class="schedule-time"><i class="fas fa-clock mr-1 text-gray-400"></i>${prog.horario}</span>
                         </div>
                         <div class="flex-1">
-                            <span class="schedule-title font-semibold text-gray-800 text-base sm:text-lg">${prog.titulo}</span>
+                            <span class="schedule-title font-semibold text-gray-800 text-base sm:text-lg">${escapeHtml(prog.titulo)}</span>
                         </div>
                         <i class="fas fa-chevron-right text-gray-400 hidden sm:block"></i>
                     </div>
