@@ -1,18 +1,18 @@
 {
   "programacoes": [
     {
-      "titulo": "EBD – Escola Bíblica Dominical",
-      "dia": "Domingo",
-      "horario": "8h30",
-      "descricao": "Ensino sistemático da Palavra de Deus, dividido por faixas etárias. Foco em doutrina e discipulado visando o crescimento e fortalecimento espiritual da igreja.",
-      "imagem": "/img/atividades/EBD.png"
-    },
-    {
       "titulo": "Culto Noturno",
       "dia": "Domingo",
       "horario": "18h",
       "descricao": "Realizado aos domingos, às 18h, o culto noturno é momento de adoração, comunhão e pregação da Palavra, onde a Igreja é edificada, fortalecida na fé e dedica-se à exaltação de Cristo.",
       "imagem": "/img/atividades/noturno.jfif"
+    },
+    {
+      "titulo": "EBD – Escola Bíblica Dominical",
+      "dia": "Domingo",
+      "horario": "8h30",
+      "descricao": "Ensino sistemático da Palavra de Deus, dividido por faixas etárias. Foco em doutrina e discipulado visando o crescimento e fortalecimento espiritual da igreja.",
+      "imagem": "/img/atividades/EBD.png"
     },
     {
       "titulo": "Culto de Oração",
