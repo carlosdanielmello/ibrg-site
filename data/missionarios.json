@@ -1,18 +1,6 @@
 {
   "missionarios": [
     {
-      "church": "Igreja Batista Regular ",
-      "city": "Manaus",
-      "name": "Miss. Carlos Eduardo ",
-      "phone": "3298928994999939",
-      "state": "AM",
-      "base": "Paulo de Tarso",
-      "location": "Comunidade Indígena",
-      "country": "Brasil",
-      "image": "/img/uploads/img_7180.jpg",
-      "description": "Ele trablhasod ujasodjasodjoasjd oasjdoajd"
-    },
-    {
       "countryFlag": "/img/info/BR.png",
       "church": "Congregação Batista Regular da Graça",
       "city": "Rio Preto da Eva",
