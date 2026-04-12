@@ -8,7 +8,7 @@ async function loadProgramacoes() {
         
         // Se não encontrar na raiz, tenta caminho relativo
         if (!response.ok) {
-            response = await fetch('data/programacoes.json');
+            response = await fetch('../data/programacoes.json');
         }
         
         if (!response.ok) {
@@ -16,7 +16,7 @@ async function loadProgramacoes() {
         }
         
         const data = await response.json();
-        console.log('Programações carregadas:', data); // Para debug
+        console.log('Programações carregadas:', data);
         
         allProgramacoes = data.programacoes || [];
         
@@ -46,7 +46,6 @@ async function loadProgramacoes() {
                 <div class="text-center py-12 col-span-full">
                     <i class="fas fa-exclamation-triangle text-4xl text-red-500"></i>
                     <p class="text-gray-500 mt-4">Erro ao carregar programações. Tente novamente mais tarde.</p>
-                    <p class="text-gray-400 text-sm mt-2">Detalhe: ${error.message}</p>
                 </div>`;
         }
     }
@@ -144,71 +143,7 @@ function renderSchedule() {
     container.innerHTML = html || '<div class="text-center py-12"><p class="text-gray-500">Nenhuma programação cadastrada.</p></div>';
 }
 
-// Menu mobile toggle
-const mobileMenuButton = document.getElementById('mobile-menu-button');
-const mobileMenu = document.getElementById('mobile-menu');
-
-if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('open');
-    });
-}
-
-// Dropdown mobile toggle - Sobre Nós
-const mobileDropdownButton1 = document.getElementById('mobile-dropdown-button-1');
-const mobileDropdown1 = document.getElementById('mobile-dropdown-1');
-if (mobileDropdownButton1 && mobileDropdown1) {
-    const chevronIcon1 = mobileDropdownButton1.querySelector('i');
-    mobileDropdownButton1.addEventListener('click', () => {
-        mobileDropdown1.classList.toggle('hidden');
-        chevronIcon1.classList.toggle('rotate-180');
-    });
-}
-
-// Dropdown mobile toggle - Missões
-const mobileDropdownButton2 = document.getElementById('mobile-dropdown-button-2');
-const mobileDropdown2 = document.getElementById('mobile-dropdown-2');
-if (mobileDropdownButton2 && mobileDropdown2) {
-    const chevronIcon2 = mobileDropdownButton2.querySelector('i');
-    mobileDropdownButton2.addEventListener('click', () => {
-        mobileDropdown2.classList.toggle('hidden');
-        chevronIcon2.classList.toggle('rotate-180');
-    });
-}
-
-// Scroll to top button
-const scrollTopBtn = document.getElementById('scrollTopBtn');
-if (scrollTopBtn) {
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            scrollTopBtn.classList.add('show');
-        } else {
-            scrollTopBtn.classList.remove('show');
-        }
-    });
-    
-    scrollTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    });
-}
-
-// Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            e.preventDefault();
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-        }
-    });
-});
-
-// Inicializar
+// Inicializar - REMOVIDAS as funções duplicadas de menu
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', loadProgramacoes);
 } else {
