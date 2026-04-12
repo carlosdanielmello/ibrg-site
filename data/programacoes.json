@@ -1,13 +1,6 @@
 {
   "programacoes": [
     {
-      "titulo": "Culto Noturno",
-      "dia": "Domingo",
-      "horario": "18h",
-      "descricao": "Realizado aos domingos, às 18h, o culto noturno é momento de adoração, comunhão e pregação da Palavra, onde a Igreja é edificada, fortalecida na fé e dedica-se à exaltação de Cristo.",
-      "imagem": "/img/atividades/noturno.jfif"
-    },
-    {
       "titulo": "EBD – Escola Bíblica Dominical",
       "dia": "Domingo",
       "horario": "8h30",
@@ -15,18 +8,11 @@
       "imagem": "/img/atividades/EBD.png"
     },
     {
-      "titulo": "Culto de Oração",
-      "dia": "Quarta-feira",
-      "horario": "19h",
-      "descricao": "Reunião dos irmãos para cultuarem ao Senhor, compartilharem seus pedidos e estarem juntos em oração, pedindo a ajuda e direção do Senhor. Momento de intercessão e comunhão dos santos.",
-      "imagem": "/img/atividades/orar.jpg"
-    },
-    {
-      "titulo": "EBEC – Escola Bíblica Evangelizadora de Crianças",
-      "dia": "Sábado",
-      "horario": "15h",
-      "descricao": "Atividade realizada aos sábados para crianças e adolescentes. A EBEC baseia seu currículo em toda a Bíblia, de Gênesis a Apocalipse, em um ciclo de quatro anos. Momentos de aprendizado da Palavra de Deus, cânticos, memorização de versículos, brincadeiras e lanche.",
-      "imagem": "/img/atividades/EBEC.png"
+      "titulo": "Culto Noturno",
+      "dia": "Domingo",
+      "horario": "18h",
+      "descricao": "Realizado aos domingos, às 18h, o culto noturno é momento de adoração, comunhão e pregação da Palavra, onde a Igreja é edificada, fortalecida na fé e dedica-se à exaltação de Cristo.",
+      "imagem": "/img/atividades/noturno.jfif"
     },
     {
       "titulo": "Sociedade Feminina",
@@ -36,11 +22,11 @@
       "imagem": "/img/programacoes/sociedade-feminina.jpg"
     },
     {
-      "titulo": "Culto de Jovens",
-      "dia": "Sábado",
-      "horario": "18h",
-      "descricao": "Reunião de jovens para aprendizado da Palavra de Deus, comunhão e tempo de brincadeiras e gincanas. Um espaço especial para os jovens crescerem na fé, fazerem amizades e se divertirem em um ambiente saudável.",
-      "imagem": "/img/programacoes/culto-jovens.jpg"
+      "titulo": "Culto de Oração",
+      "dia": "Quarta-feira",
+      "horario": "19h",
+      "descricao": "Reunião dos irmãos para cultuarem ao Senhor, compartilharem seus pedidos e estarem juntos em oração, pedindo a ajuda e direção do Senhor. Momento de intercessão e comunhão dos santos.",
+      "imagem": "/img/atividades/orar.jpg"
     },
     {
       "titulo": "Culto no Lar",
@@ -48,6 +34,20 @@
       "horario": "19h",
       "descricao": "Culto ao Senhor realizado na casa dos irmãos da igreja, com o intuito de adoração ao Senhor e testemunho cristão aos parentes e vizinhos não-convertidos.",
       "imagem": "/img/programacoes/culto-lar.jpg"
+    },
+    {
+      "titulo": "EBEC – Escola Bíblica Evangelizadora de Crianças",
+      "dia": "Sábado",
+      "horario": "15h",
+      "descricao": "Atividade realizada aos sábados para crianças e adolescentes. A EBEC baseia seu currículo em toda a Bíblia, de Gênesis a Apocalipse, em um ciclo de quatro anos. Momentos de aprendizado da Palavra de Deus, cânticos, memorização de versículos, brincadeiras e lanche.",
+      "imagem": "/img/atividades/EBEC.png"
+    },
+    {
+      "titulo": "Culto de Jovens",
+      "dia": "Sábado",
+      "horario": "18h",
+      "descricao": "Reunião de jovens para aprendizado da Palavra de Deus, comunhão e tempo de brincadeiras e gincanas. Um espaço especial para os jovens crescerem na fé, fazerem amizades e se divertirem em um ambiente saudável.",
+      "imagem": "/img/programacoes/culto-jovens.jpg"
     }
   ]
 }
