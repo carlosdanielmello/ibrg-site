@@ -15,13 +15,6 @@
       "imagem": "/img/atividades/EBD.png"
     },
     {
-      "titulo": "Culto Evangelístico ",
-      "dia": "Terça-feira",
-      "horario": "9h00",
-      "descricao": "Um culto para sair evangelizando as pessoas, asodjaosd masdodoandonasd asd d",
-      "imagem": "/img/uploads/whatsapp-image-2026-01-24-at-22.17.49.jpeg"
-    },
-    {
       "titulo": "Culto de Oração",
       "dia": "Quarta-feira",
       "horario": "19h",
@@ -55,6 +48,13 @@
       "horario": "19h",
       "descricao": "Culto ao Senhor realizado na casa dos irmãos da igreja, com o intuito de adoração ao Senhor e testemunho cristão aos parentes e vizinhos não-convertidos.",
       "imagem": "/img/programacoes/culto-lar.jpg"
+    },
+    {
+      "titulo": "asdasd",
+      "dia": "Sexta-feira",
+      "descricao": "ad asd",
+      "horario": "9h30",
+      "imagem": "/img/uploads/img-20260326-wa0196.jpg"
     }
   ]
 }
