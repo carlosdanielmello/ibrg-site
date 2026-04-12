@@ -1,0 +1,49 @@
+{
+  "congregacoes": [
+    {
+      "nome": "Congregação Batista Regular da Águas Claras",
+      "pastor": "Pr. Isac Santos",
+      "localizacao": "Manaus/AM",
+      "descricao": "Localizada no bairro Águas Claras, na cidade de Manaus (AM), esta congregação é parte do trabalho da Igreja Batista Regular da Graça. Sob a liderança do pastor Isac Santos. Como extensão da IBRG, ela compartilha dos mesmos princípios doutrinários e do compromisso com a Palavra de Deus.",
+      "imagem": "/img/congregacao/c1.png",
+      "directionsUrl": "https://maps.app.goo.gl/JyEXarhG3AMtJULU8",
+      "contactUrl": "https://wa.me/5592994589762"
+    },
+    {
+      "nome": "Congregação Batista Regular Antioquia",
+      "pastor": "Pr. André Carneiro",
+      "localizacao": "Manaus/AM",
+      "descricao": "Situada no bairro Antioquia, em Manaus (AM), esta congregação integra a obra da Igreja Batista Regular da Graça. Está sob a liderança do pastor André Carneiro e caminha em unidade com os mesmos valores bíblicos e doutrinários da IBRG, firmada no compromisso de anunciar fielmente a Palavra de Deus.",
+      "imagem": "/img/congregacao/c2.png",
+      "directionsUrl": "https://maps.app.goo.gl/uk1RmDWLoUafcVVS6",
+      "contactUrl": "https://wa.me/5592994100718"
+    },
+    {
+      "nome": "Congregação Batista Regular de Éfeso",
+      "pastor": "Pr. Willian Crispin",
+      "localizacao": "Careiro Castanho Km22",
+      "descricao": "Situada no Km 22 do Careiro Castanho (AM), a Congregação Batista Regular de Éfeso é fruto do trabalho missionário da Igreja Batista Regular da Graça. Sob a liderança do pastor Willian Crispin, essa congregação mantém firme o compromisso com a sã doutrina e com a pregação fiel da Palavra de Deus, sendo uma extensão viva da missão da IBRG na região.",
+      "imagem": "/img/congregacao/c3.png",
+      "directionsUrl": "https://wa.me/5592985405324",
+      "contactUrl": "https://wa.me/5592985405324"
+    },
+    {
+      "nome": "Congregação Batista Regular da Graça",
+      "pastor": "Pr. Amarildo Nunes",
+      "localizacao": "Rio Preto da Eva/AM",
+      "descricao": "Localizada na cidade de Rio Preto da Eva (AM), esta congregação é parte do trabalho da Igreja Batista Regular da Graça. Sob a liderança do pastor Amarildo Nunes. Como extensão da IBRG, ela compartilha dos mesmos princípios doutrinários e do compromisso com a Palavra de Deus.",
+      "imagem": "/img/congregacao/c4.jfif",
+      "directionsUrl": "https://wa.me/5592999686404",
+      "contactUrl": "https://wa.me/5592999686404"
+    },
+    {
+      "nome": "Congregação Batista Regular Maranata",
+      "pastor": "Pr. Jânio Júnior",
+      "localizacao": "Anori/AM",
+      "descricao": "Localizada na cidade de Anori (AM), a Congregação Batista Regular Maranata é fruto do esforço missionário da Igreja Batista Regular da Graça. Liderada pelo pastor Jânio Júnior, essa congregação tem se dedicado intensamente ao discipulado e à formação de líderes locais, visando o fortalecimento da igreja e a propagação do Reino de Deus na região.",
+      "imagem": "/img/congregacao/c5.jpg",
+      "directionsUrl": "https://wa.me/5592992851029",
+      "contactUrl": "https://wa.me/5592992851029"
+    }
+  ]
+}

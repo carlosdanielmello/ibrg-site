@@ -56,3 +56,21 @@ collections:
               - {label: "Horário", name: "horario", widget: "string", hint: "Exemplo: 8h30, 19h, 18h"}
               - {label: "Descrição", name: "descricao", widget: "text"}
               - {label: "Imagem ilustrativa", name: "imagem", widget: "image", required: false}
+
+                    - name: "congregacoes"
+        label: "Congregações"
+        file: "data/congregacoes.json"
+        description: "Lista de congregações da igreja"
+        fields:
+          - label: "Congregações"
+            name: "congregacoes"
+            widget: "list"
+            summary: "{{fields.nome}} - {{fields.pastor}}"
+            fields:
+              - {label: "Nome da Congregação", name: "nome", widget: "string"}
+              - {label: "Pastor Responsável", name: "pastor", widget: "string"}
+              - {label: "Localização", name: "localizacao", widget: "string", hint: "Exemplo: Manaus/AM"}
+              - {label: "Descrição", name: "descricao", widget: "text"}
+              - {label: "Imagem da Congregação", name: "imagem", widget: "image", required: false}
+              - {label: "Link para Google Maps (Como chegar)", name: "directionsUrl", widget: "string", required: false}
+              - {label: "Link para WhatsApp/Contato", name: "contactUrl", widget: "string", required: false}
