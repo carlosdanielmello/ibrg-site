@@ -20,7 +20,7 @@ async function loadProgramacoes() {
         
         allProgramacoes = data.programacoes || [];
         
-        // ORDENA POR DIA DA SEMANA (agora que o cliente escolhe em menu)
+        // ORDENA POR DIA E DEPOIS POR HORÁRIO
         const ordemDias = {
             "Domingo": 1,
             "Segunda-feira": 2,
@@ -31,8 +31,32 @@ async function loadProgramacoes() {
             "Sábado": 7
         };
         
+        // Função para converter horário (ex: "8h30" ou "19h") para número comparável
+        function horarioToNumber(horario) {
+            let h = horario.replace('h', ':').replace('h30', ':30');
+            let partes = h.split(':');
+            let hora = parseInt(partes[0]);
+            let minuto = partes[1] ? parseInt(partes[1]) : 0;
+            
+            if (isNaN(minuto)) minuto = 0;
+            
+            return hora * 60 + minuto;
+        }
+        
         allProgramacoes.sort((a, b) => {
-            return (ordemDias[a.dia] || 99) - (ordemDias[b.dia] || 99);
+            // Primeiro ordena por dia
+            const diaA = ordemDias[a.dia] || 99;
+            const diaB = ordemDias[b.dia] || 99;
+            
+            if (diaA !== diaB) {
+                return diaA - diaB;
+            }
+            
+            // Se mesmo dia, ordena por horário
+            const horarioA = horarioToNumber(a.horario);
+            const horarioB = horarioToNumber(b.horario);
+            
+            return horarioA - horarioB;
         });
         
         renderProgramacoes();
