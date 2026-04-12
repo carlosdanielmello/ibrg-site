@@ -31,7 +31,7 @@
     {
       "titulo": "Culto no Lar",
       "dia": "Sexta-feira",
-      "horario": "19h",
+      "horario": "19h00",
       "descricao": "Culto ao Senhor realizado na casa dos irmãos da igreja, com o intuito de adoração ao Senhor e testemunho cristão aos parentes e vizinhos não-convertidos.",
       "imagem": "/img/uploads/authentic-book-club-scene.jpg"
     },
@@ -45,9 +45,9 @@
     {
       "titulo": "Culto de Jovens",
       "dia": "Sábado",
-      "horario": "18h",
+      "horario": "18h00",
       "descricao": "Reunião de jovens para aprendizado da Palavra de Deus, comunhão e tempo de brincadeiras e gincanas. Um espaço especial para os jovens crescerem na fé, fazerem amizades e se divertirem em um ambiente saudável.",
-      "imagem": "/img/uploads/authentic-book-club-scene.jpg"
+      "imagem": "/img/uploads/2150104551.jpg"
     }
   ]
 }
