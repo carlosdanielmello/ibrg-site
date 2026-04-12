@@ -52,8 +52,36 @@ collections:
             summary: "{{fields.titulo}} - {{fields.dia}} às {{fields.horario}}"
             fields:
               - {label: "Título", name: "titulo", widget: "string"}
-              - {label: "Dia da semana", name: "dia", widget: "string", hint: "Exemplo: Domingo, Segunda-feira, Quarta-feira, Sábado"}
-              - {label: "Horário", name: "horario", widget: "string", hint: "Exemplo: 8h30, 19h, 18h"}
+              
+              - label: "Dia da semana"
+                name: "dia"
+                widget: "select"
+                options:
+                  - {label: "Domingo", value: "Domingo"}
+                  - {label: "Segunda-feira", value: "Segunda-feira"}
+                  - {label: "Terça-feira", value: "Terça-feira"}
+                  - {label: "Quarta-feira", value: "Quarta-feira"}
+                  - {label: "Quinta-feira", value: "Quinta-feira"}
+                  - {label: "Sexta-feira", value: "Sexta-feira"}
+                  - {label: "Sábado", value: "Sábado"}
+              
+              - label: "Horário"
+                name: "horario"
+                widget: "select"
+                options:
+                  - {label: "8h00", value: "8h00"}
+                  - {label: "8h30", value: "8h30"}
+                  - {label: "9h00", value: "9h00"}
+                  - {label: "9h30", value: "9h30"}
+                  - {label: "10h00", value: "10h00"}
+                  - {label: "15h00", value: "15h00"}
+                  - {label: "16h00", value: "16h00"}
+                  - {label: "17h00", value: "17h00"}
+                  - {label: "18h00", value: "18h00"}
+                  - {label: "19h00", value: "19h00"}
+                  - {label: "19h30", value: "19h30"}
+                  - {label: "20h00", value: "20h00"}
+              
               - {label: "Descrição", name: "descricao", widget: "text"}
               - {label: "Imagem ilustrativa", name: "imagem", widget: "image", required: false}
 

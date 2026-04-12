@@ -20,8 +20,20 @@ async function loadProgramacoes() {
         
         allProgramacoes = data.programacoes || [];
         
-        // NÃO ORDENA MAIS - mantém a ordem definida no CMS
-        // O cliente pode arrastar os itens na ordem que quiser
+        // ORDENA POR DIA DA SEMANA (agora que o cliente escolhe em menu)
+        const ordemDias = {
+            "Domingo": 1,
+            "Segunda-feira": 2,
+            "Terça-feira": 3,
+            "Quarta-feira": 4,
+            "Quinta-feira": 5,
+            "Sexta-feira": 6,
+            "Sábado": 7
+        };
+        
+        allProgramacoes.sort((a, b) => {
+            return (ordemDias[a.dia] || 99) - (ordemDias[b.dia] || 99);
+        });
         
         renderProgramacoes();
         renderSchedule();
@@ -78,15 +90,15 @@ function renderSchedule() {
         return;
     }
     
-    // Agrupar por dia
+    // Agrupar por dia (na ordem correta)
     const dias = {
+        "Domingo": [],
         "Segunda-feira": [],
         "Terça-feira": [],
         "Quarta-feira": [],
         "Quinta-feira": [],
         "Sexta-feira": [],
-        "Sábado": [],
-        "Domingo": []
+        "Sábado": []
     };
     
     allProgramacoes.forEach(prog => {
@@ -96,13 +108,13 @@ function renderSchedule() {
     });
     
     const diasTraducao = {
+        "Domingo": "DOMINGO",
         "Segunda-feira": "SEGUNDA",
         "Terça-feira": "TERÇA",
         "Quarta-feira": "QUARTA",
         "Quinta-feira": "QUINTA",
         "Sexta-feira": "SEXTA",
-        "Sábado": "SÁBADO",
-        "Domingo": "DOMINGO"
+        "Sábado": "SÁBADO"
     };
     
     let html = '';
@@ -131,7 +143,7 @@ function renderSchedule() {
     container.innerHTML = html || '<div class="text-center py-12"><p class="text-gray-500">Nenhuma programação cadastrada.</p></div>';
 }
 
-// Inicializar - REMOVIDAS as funções duplicadas de menu
+// Inicializar
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', loadProgramacoes);
 } else {
