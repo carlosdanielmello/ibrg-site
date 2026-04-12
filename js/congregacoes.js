@@ -8,14 +8,14 @@ async function loadCongregacoesFromJSON() {
     try {
         const response = await fetch('/data/congregacoes.json');
         if (!response.ok) throw new Error('Erro ao carregar congregações');
-        
+
         const data = await response.json();
         allCongregacoes = data.congregacoes || [];
         filteredCongregacoes = [...allCongregacoes];
-        
+
         renderCongregations(currentPage);
         updatePaginationControls();
-        
+
     } catch (error) {
         console.error('Erro ao carregar congregações:', error);
         const container = document.getElementById('congregationsContainer');
@@ -97,10 +97,14 @@ function renderCongregations(page) {
 function updatePaginationControls() {
     const totalPages = Math.ceil(filteredCongregacoes.length / itemsPerPage);
     const pageNumbersContainer = document.getElementById('pageNumbers');
+    if (!pageNumbersContainer) return;
+
     pageNumbersContainer.innerHTML = '';
 
-    document.getElementById('prevPage').disabled = currentPage === 1;
-    document.getElementById('nextPage').disabled = currentPage === totalPages;
+    const prevBtn = document.getElementById('prevPage');
+    const nextBtn = document.getElementById('nextPage');
+    if (prevBtn) prevBtn.disabled = currentPage === 1;
+    if (nextBtn) nextBtn.disabled = currentPage === totalPages;
 
     for (let i = 1; i <= totalPages; i++) {
         const pageButton = document.createElement('button');
@@ -116,6 +120,9 @@ function updatePaginationControls() {
 }
 
 function openCongregationModal(congregation) {
+    const modal = document.getElementById('congregationModal');
+    if (!modal) return;
+
     document.getElementById('modalCongregationName').textContent = congregation.nome;
     document.getElementById('modalLocation').textContent = congregation.localizacao;
     document.getElementById('modalPastor').textContent = congregation.pastor;
@@ -123,33 +130,17 @@ function openCongregationModal(congregation) {
     document.getElementById('modalCongregationImage').alt = congregation.nome;
     document.getElementById('modalCongregationDescription').textContent = congregation.descricao;
 
-    // Botão Como chegar (Google Maps ou link de localização)
-    const directionsLink = document.getElementById('modalDirectionsLink');
-    const newDirectionsLink = directionsLink.cloneNode(true);
-    directionsLink.replaceWith(newDirectionsLink);
-    
-    newDirectionsLink.addEventListener('click', (e) => {
-        e.stopPropagation();
-        if (congregation.directionsUrl) {
-            window.open(congregation.directionsUrl, '_blank');
-        }
-        hideCongregationModal();
-    });
-
-    // Botão Contato (WhatsApp)
-    const contactLink = document.getElementById('modalContactLink');
-    const newContactLink = contactLink.cloneNode(true);
-    contactLink.replaceWith(newContactLink);
-    
-    newContactLink.addEventListener('click', (e) => {
-        e.stopPropagation();
+    // Contato - mostra apenas o número
+    const modalContato = document.getElementById('modalContato');
+    if (modalContato) {
         if (congregation.contactUrl) {
-            window.open(congregation.contactUrl, '_blank');
+            modalContato.textContent = congregation.contactUrl;
+        } else {
+            modalContato.textContent = 'Não informado';
         }
-        hideCongregationModal();
-    });
+    }
 
-    document.getElementById('congregationModal').classList.remove('hidden');
+    modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 }
 
@@ -191,34 +182,46 @@ function debounceSearch() {
 }
 
 function hideCongregationModal() {
-    document.getElementById('congregationModal').classList.add('hidden');
-    document.body.style.overflow = 'auto';
+    const modal = document.getElementById('congregationModal');
+    if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+    }
 }
 
 function initCongregationsPage() {
-    document.getElementById('prevPage').addEventListener('click', () => {
-        if (currentPage > 1) {
-            currentPage--;
-            renderCongregations(currentPage);
-            updatePaginationControls();
-        }
-    });
-
-    document.getElementById('nextPage').addEventListener('click', () => {
-        const totalPages = Math.ceil(filteredCongregacoes.length / itemsPerPage);
-        if (currentPage < totalPages) {
-            currentPage++;
-            renderCongregations(currentPage);
-            updatePaginationControls();
-        }
-    });
-
+    const prevBtn = document.getElementById('prevPage');
+    const nextBtn = document.getElementById('nextPage');
     const searchInput = document.getElementById('searchCongregationInput');
+    const searchForm = document.getElementById('searchCongregationForm');
+    const closeBtn = document.getElementById('closeCongregationModal');
+    const modal = document.getElementById('congregationModal');
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                renderCongregations(currentPage);
+                updatePaginationControls();
+            }
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            const totalPages = Math.ceil(filteredCongregacoes.length / itemsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderCongregations(currentPage);
+                updatePaginationControls();
+            }
+        });
+    }
+
     if (searchInput) {
         searchInput.addEventListener('input', debounceSearch);
     }
 
-    const searchForm = document.getElementById('searchCongregationForm');
     if (searchForm) {
         searchForm.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -236,10 +239,10 @@ function initCongregationsPage() {
         });
     }
 
-    const closeBtn = document.getElementById('closeCongregationModal');
-    if (closeBtn) closeBtn.addEventListener('click', hideCongregationModal);
-    
-    const modal = document.getElementById('congregationModal');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', hideCongregationModal);
+    }
+
     if (modal) {
         modal.addEventListener('click', (event) => {
             if (event.target === modal) {
