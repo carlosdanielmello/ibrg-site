@@ -1,6 +1,16 @@
 {
   "missionarios": [
     {
+      "base": "Maranata",
+      "name": "asdasd",
+      "description": "asdasd",
+      "church": "asdas",
+      "location": "asdasd",
+      "city": "asd",
+      "state": "asdasd",
+      "country": "Venezuela"
+    },
+    {
       "countryFlag": "/img/info/BR.png",
       "church": "Congregação Batista Regular da Graça",
       "city": "Rio Preto da Eva",
