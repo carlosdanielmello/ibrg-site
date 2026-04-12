@@ -48,13 +48,6 @@
       "horario": "19h",
       "descricao": "Culto ao Senhor realizado na casa dos irmãos da igreja, com o intuito de adoração ao Senhor e testemunho cristão aos parentes e vizinhos não-convertidos.",
       "imagem": "/img/programacoes/culto-lar.jpg"
-    },
-    {
-      "titulo": "Culto Evangelístico",
-      "dia": "Terça-feira",
-      "horario": "8:00",
-      "descricao": "Um culto para evangelizar e falar da palavra de Deus para todos.",
-      "imagem": "/img/uploads/img_7180.jpg"
     }
   ]
 }
