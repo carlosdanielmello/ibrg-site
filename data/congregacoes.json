@@ -44,6 +44,14 @@
       "imagem": "/img/congregacao/c5.jpg",
       "directionsUrl": "https://wa.me/5592992851029",
       "contactUrl": "5592992851029"
+    },
+    {
+      "nome": "Teste",
+      "pastor": "teste",
+      "localizacao": "ttt",
+      "descricao": "wsrasdasdasd",
+      "imagem": "/img/uploads/logo.jpeg",
+      "contactUrl": "35eew5345345"
     }
   ]
 }
